@@ -1,3 +1,8 @@
+/*  Name: MPPT Solar Charger with Bluetooth communication | Main software file
+ *  Author: Karol Wojsław
+ *  Date: 02/04/2021 (last release)
+ */
+
 #include <SoftwareSerial.h>
 
 /*Define pin allocations on Arduino board */
