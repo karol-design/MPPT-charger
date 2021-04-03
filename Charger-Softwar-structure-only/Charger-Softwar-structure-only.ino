@@ -1,54 +1,44 @@
-#define time_a  600000 //Time 
+#define timeMain  300000UL //Time between main loop iterations (300000 ms = 5 minutes)
 
 void setup() {
   //...
 }
 
 
-
 void loop() {
-  unsigned long currentTime = 0, tempTime = 0, timeDifference = 0; //Variables for time management in the main loop
+  unsigned long currentTime, tempTime, timeDifference = 0; //Variables for time management in the main loop
   int BAT_voltage, PV_voltage, PV_current; //Values of measured voltages and currents in mV
-  bool Day, Bulk;
+  bool Bulk;
 
-  currentTime = millis();
-  timeDifference = currentTime - tempTime;
-
-  /* Main loop of the code set to regularly check if it's Day or Night and to send report over Bluetooth */
-  while(1){
+  /* Main loop of the code set to regularly check state of charge of the battery */
+  while(true){
     currentTime = millis(); //Save current execution time
-    timeDifference = currentTime - tempTime;
-  
-    digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576
-    PV_voltage = measureAverage(PV_VOLT_PIN, 20, R3, R4);
+    tempTime = currentTime; //Set tempTime to currentTime at the beginning of the loop
+    timeDifference = 0; //Set timeDifference to 0
 
-
-    /* ------------------------------------- */
-    /* Enter Day Mode if PV_voltage > 12.0 V */
-    if(PV_voltage > 1200){
-      Day = true;
+    /* Check state of charge of the battery and decide if Bulk or Float charging mode should be executed */
+    if(measureAverage(BAT_VOLT_PIN, 20, R5, R6) < 1300){
+      Bulk == 1; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
+    }else{
+      Bulk == 0;
+    }
+ 
+    /* --------------------------------- */
+    /* Enter bulk charging mode */
+    while(Bulk == 1 && timeDifference < timeMain){
+      //SetCharging(1470); //Set the charging voltage to 14.7 Volts
       
-      while(BAT_voltage > 1300){ //Bulk charge with MPPT algorithm implemented
-        SetCharging(1470); //Set the charging voltage to 14.7 Volts
-      }
-
-      //Float-storage charge without MPPT
-      SetCharging(1370); //Set the charging voltage to 13.70 Volts
-      delay(5000); //Wait for steady-state on RC filter (connected to PWM output)
-      digitalWrite(LM_ENABLE_PIN, LOW); //Turn on LM2576 switching buck converter
-
+      currentTime = millis();
+      timeDifference = currentTime - tempTime;
     }
 
-    /* ------------------------------------------------------------------------------------ */
-    /* Enter Night Mode if PV_voltage < 12.0 V to save power ant prevent IC from any damage */
-    else if(PV_voltage < 1200){
-      Day = false;
-      digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576
+    /* --------------------------------- */
+    /* Enter float-storage charging mode */
+    while(Bulk == 0 && timeDifference < timeMain){
+      //SetCharging(1370); //Set the charging voltage to 13.70 Volts
+
+      currentTime = millis();
+      timeDifference = currentTime - tempTime;
     }
-
-  delay(time_a);
-  generateReport(BAT_voltage, PV_voltage, PV_current, 1); //Bluetooth (bt = 1)
-  generateReport(BAT_voltage, PV_voltage, PV_current, 0); //Serial Port (bt = 0)
-
   }
 }

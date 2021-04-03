@@ -100,7 +100,9 @@ void SetCharging(int Voltage_mV){
 void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool bt){
   if(bt == 1){
     bluetooth.print("-----------------------------------------------\n");
-    bluetooth.print("MPPT Solar Charger with Bt | Current status: \nBattery voltage: ");
+    bluetooth.print("MPPT Solar Charger with Bt | Current status: \nDay mode: ");
+    bluetooth.print(PV_voltage > 1300); //Print 1 if PV panel is in the sunlight (PV_V > 13.0V)
+    bluetooth.print(", Day (1) / Night (0)\nBattery voltage: ");
     bluetooth.print(BAT_voltage);
     bluetooth.print(" mV \nPhotovoltaic panel voltage: ");
     bluetooth.print(PV_voltage);
@@ -113,7 +115,9 @@ void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool bt){
     bluetooth.print(" % of full capacity \n\n");
   } else if(bt == 0){
     Serial.print("-----------------------------------------------\n");
-    Serial.print("MPPT Solar Charger with Bt | Current status: \nBattery voltage: ");
+    Serial.print("MPPT Solar Charger with Bt | Current status: \nDay mode: ");
+    Serial.print(PV_voltage > 1300); //Print 1 if PV panel is in the sunlight (PV_V > 13.0V)
+    Serial.print(", Day (1) / Night (0)\nBattery voltage: ");
     Serial.print(BAT_voltage);
     Serial.print(" mV \nPhotovoltaic panel voltage: ");
     Serial.print(PV_voltage);
