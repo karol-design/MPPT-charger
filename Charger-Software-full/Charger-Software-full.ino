@@ -43,6 +43,9 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
 
   digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 switching buck converter by default
+  digitalWrite(BUZZER_PIN, LOW); //Turn off buzzer by default
+  digitalWrite(LED_PIN, HIGH); //Turn off LED indicator by default
+  digitalWrite(PWM_PIN, LOW); //Ground PWM pin by default
 }
 
 
