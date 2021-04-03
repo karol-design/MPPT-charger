@@ -97,12 +97,17 @@ void SetCharging(int Voltage_mV){
 
 /* ---------------------------------------------------------------------------------------------- */
 /* Function that send a report on the current status of the charger through bluetooth/serial port */
-void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool bt){
+void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool Bulk, bool bt){
   if(bt == 1){
     bluetooth.print("-----------------------------------------------\n");
     bluetooth.print("MPPT Solar Charger with Bt | Current status: \nDay mode: ");
     bluetooth.print(PV_voltage > 1300); //Print 1 if PV panel is in the sunlight (PV_V > 13.0V)
-    bluetooth.print(", Day (1) / Night (0)\nBattery voltage: ");
+    bluetooth.print(", Day (1) / Night (0)\nCurrent charging mode:");
+    if(Bulk == 1){
+      bluetooth.print("Bulk mode (MPPT algorithm on)\nBattery voltage: ");
+    }else if(Bulk == 0){
+      bluetooth.print("Float mode (MPPT algorithm off)\nBattery voltage: ");
+    }
     bluetooth.print(BAT_voltage);
     bluetooth.print(" mV \nPhotovoltaic panel voltage: ");
     bluetooth.print(PV_voltage);
@@ -117,7 +122,12 @@ void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool bt){
     Serial.print("-----------------------------------------------\n");
     Serial.print("MPPT Solar Charger with Bt | Current status: \nDay mode: ");
     Serial.print(PV_voltage > 1300); //Print 1 if PV panel is in the sunlight (PV_V > 13.0V)
-    Serial.print(", Day (1) / Night (0)\nBattery voltage: ");
+    Serial.print(", Day (1) / Night (0)\nCurrent charging mode:");
+    if(Bulk == 1){
+      Serial.print("Bulk mode (MPPT algorithm on)\nBattery voltage: ");
+    }else if(Bulk == 0){
+      Serial.print("Float mode (MPPT algorithm off)\nBattery voltage: ");
+    }
     Serial.print(BAT_voltage);
     Serial.print(" mV \nPhotovoltaic panel voltage: ");
     Serial.print(PV_voltage);
