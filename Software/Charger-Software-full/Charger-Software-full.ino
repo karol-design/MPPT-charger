@@ -1,6 +1,8 @@
 /*  Name: MPPT Solar Charger with Bluetooth communication | Main software file
  *  Author: Karol Wojsław
- *  Date: 03/04/2021 (last release)
+ *  Date: 04/04/2021 (last release)
+ *  Description: Code for Atmega328 microcontroller on MPPT charge controller board [...]
+ *  [...] based on LM2576 switching voltage regulator
  */
 
 
