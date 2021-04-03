@@ -9,6 +9,9 @@
 /*Define time intervals for different loops */
 #define timeMain  300000UL //Time between main loop iterations (300000 ms = 5 minutes)
 
+/* MPPT algorithm parameters definition */
+#define MPPT_delay_t 1000
+
 /*Define pin allocations on Arduino board */
 #define BAT_VOLT_PIN    A0
 #define PV_VOLT_PIN     A1
@@ -42,17 +45,22 @@ void setup() {
   pinMode(BUZZER_PIN, OUTPUT);
   pinMode(LED_PIN, OUTPUT);
 
+  //Output state change to default on startup
   digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 switching buck converter by default
   digitalWrite(BUZZER_PIN, LOW); //Turn off buzzer by default
   digitalWrite(LED_PIN, HIGH); //Turn off LED indicator by default
-  digitalWrite(PWM_PIN, LOW); //Ground PWM pin by default
+  SetCharging(1300); //Set the charging voltage to 13.0 Volts by default
+  
+  delay(2000); //Wait 2 seconds before ending the setup for RC filter (connected to PWM) stabilisation
 }
 
 
 void loop() {
   unsigned long currentTime, tempTime, timeDifference = 0; //Variables for time management in the main loop
-  int BAT_voltage, PV_voltage, PV_current; //Values of measured voltages and currents in mV
-  bool Bulk;
+  long BAT_voltage, PV_voltage, PV_current; //Values of measured voltages and currents in mV
+  unsigned int Power_new, Power_old = 0, MPPT_val = 1300;
+  byte MPPT_change = 10;
+  bool Bulk = false;
 
   /* Main loop of the code set to regularly check state of charge of the battery */
   while(true){
@@ -64,17 +72,29 @@ void loop() {
     digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 for measurements
     delay(500);
     if(measureAverage(BAT_VOLT_PIN, 20, R5, R6) < 1300){
-      Bulk == 1; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
+      Bulk = true; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
     }else{
-      Bulk == 0; //Set Bulk to 0 if the Battery voltage is higher than 13.0V
+      Bulk = false; //Set Bulk to 0 if the Battery voltage is higher than 13.0V
     }
-    digitalWrite(LM_ENABLE_PIN, LOW); //Turn on LM2576 after the measurement
+    digitalWrite(LM_ENABLE_PIN, LOW); //Turn on LM2576
  
     /* ------------------------------------------------------------ */
     /* Enter bulk charging mode with MPPT algorithm on*/
     while(Bulk == 1 && timeDifference < timeMain){
-      SetCharging(1470); //Set the charging voltage to 14.7 Volts
+      SetCharging(MPPT_val); //Set the charging voltage to MPPT_val (13.0 V default)
+
+      PV_current = ((measureAverage(PV_CURRENT_PIN, 20, 1, 0) - 2500)*10);
+      PV_voltage = measureAverage(PV_VOLT_PIN, 20, R3, R4);
+
+      Power_new = PV_current * PV_voltage;
+
+      if(Power_new > Power_old){
+        MPPT_change = -MPPT_change;
+      }
       
+      MPPT_val =+ MPPT_change;
+      Power_old = Power_new;
+      delay(MPPT_delay_t);
       currentTime = millis();
       timeDifference = currentTime - tempTime;
     }
@@ -82,8 +102,7 @@ void loop() {
     /* ------------------------------------------------------------ */
     /* Enter float-storage charging mode with MPPT algorithm off*/
     while(Bulk == 0 && timeDifference < timeMain){
-      SetCharging(1370); //Set the charging voltage to 13.70 Volts
-
+      SetCharging(1370); //Set the charging voltage to 13.7 Volts
       currentTime = millis();
       timeDifference = currentTime - tempTime;
     }
@@ -117,9 +136,9 @@ int measureAverage(int input_pin, int n, int V_div_R1, int V_div_R2){
 
 /* -------------------------------------------------------------------------------------------------------------- */
 /* Function that change the charging voltage (LM2576 Vout) to a set value  */
-void SetCharging(int Voltage_mV){
-  int V_ref_mV = ((((R8 + R9)*1235)/R8) - ((R9 * Voltage_mV)/R8));
-  int V_ref = map(V_ref_mV, 0, Vin_mV, 0, 1024); //Map value of Reference voltage in mV to 10bit value (0-1024)
+void SetCharging(unsigned long Voltage_mV){
+  unsigned long V_ref_mV = ((((R8 + R9)*(long)1235)/R8) - ((R9 * Voltage_mV)/R8));
+  unsigned long V_ref = map(V_ref_mV, 0, Vin_mV, 0, 1024); //Map value of Reference voltage in mV to 10bit value (0-1024)
   analogWrite(PWM_PIN, V_ref); //Set reference voltage on PWM pin
 }
 
