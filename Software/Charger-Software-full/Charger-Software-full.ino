@@ -7,10 +7,10 @@
 #include <SoftwareSerial.h>
 
 /*Define time intervals for different loops */
-#define timeMain  300000UL //Time between main loop iterations (300000 ms = 5 minutes)
+#define timeMain 60000UL //Time between main loop iterations (60000 ms = 1 minute)
 
 /* MPPT algorithm parameters definition */
-#define MPPT_delay_t 1000
+#define MPPT_delay_t 1000 //Time between iterations of MPPT algorithm (1000 ms = 1 second)
 
 /*Define pin allocations on Arduino board */
 #define BAT_VOLT_PIN    A0
@@ -23,7 +23,7 @@
 #define BUZZER_PIN      8
 #define LED_PIN         9
 
-/*Fill in values below after callibration for better performance */
+/*Fill in values below after callibration for improved precision of measurements and charger performance */
 #define Vin_mV 5000 //Atmega328 supply voltage in mV
 #define R3  4700 
 #define R4  1000
@@ -56,9 +56,9 @@ void setup() {
 
 
 void loop() {
-  unsigned long currentTime, tempTime, timeDifference = 0; //Variables for time management in the main loop
-  long BAT_voltage, PV_voltage, PV_current; //Values of measured voltages and currents in mV
-  unsigned int Power_new, Power_old = 0, MPPT_val = 1300;
+  //Variables declaration (time management, measurements, MPPT)
+  unsigned long BAT_voltage, PV_voltage, PV_current, currentTime, tempTime, timeDifference = 0; 
+  unsigned int Power_new, Power_old = 0, MPPT_Vout = 1300;
   byte MPPT_change = 10;
   bool Bulk = false;
 
@@ -81,7 +81,7 @@ void loop() {
     /* ------------------------------------------------------------ */
     /* Enter bulk charging mode with MPPT algorithm on*/
     while(Bulk == 1 && timeDifference < timeMain){
-      SetCharging(MPPT_val); //Set the charging voltage to MPPT_val (13.0 V default)
+      SetCharging(MPPT_Vout); //Set the charging voltage to MPPT_val (13.0 V default)
 
       PV_current = ((measureAverage(PV_CURRENT_PIN, 20, 1, 0) - 2500)*10);
       PV_voltage = measureAverage(PV_VOLT_PIN, 20, R3, R4);
@@ -92,7 +92,7 @@ void loop() {
         MPPT_change = -MPPT_change;
       }
       
-      MPPT_val =+ MPPT_change;
+      MPPT_Vout =+ MPPT_change;
       Power_old = Power_new;
       delay(MPPT_delay_t);
       currentTime = millis();
@@ -111,7 +111,7 @@ void loop() {
     /*Measure the average of n = 20 readings from analog pins and generate reports */
     BAT_voltage = measureAverage(BAT_VOLT_PIN, 20, R5, R6);
     PV_voltage = measureAverage(PV_VOLT_PIN, 20, R3, R4);
-    PV_current = (measureAverage(PV_CURRENT_PIN, 20, 1, 0) - 2500)*10; //No voltage div, hence R1=0 & R2=1, 2.5 V nominal, then 1mV = 10 mA
+    PV_current = ((measureAverage(PV_CURRENT_PIN, 20, 1, 0) - 2500)*10); //No voltage div, hence R1=0 & R2=1, 2.5 V nominal, then 1mV = 10 mA
     
     generateReport(BAT_voltage, PV_voltage, PV_current, Bulk, 1); //Send report over bluetooth (bt = 1)
     generateReport(BAT_voltage, PV_voltage, PV_current, Bulk, 0); //Send report over USB serial port
