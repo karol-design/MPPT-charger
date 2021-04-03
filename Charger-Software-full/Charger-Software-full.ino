@@ -3,6 +3,7 @@
  *  Date: 03/04/2021 (last release)
  */
 
+
 #include <SoftwareSerial.h>
 
 /*Define time intervals for different loops */
@@ -57,25 +58,28 @@ void loop() {
     timeDifference = 0; //Set timeDifference to 0
 
     /* Check state of charge of the battery and decide if Bulk or Float charging mode should be executed */
+    digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 for measurements
+    delay(500);
     if(measureAverage(BAT_VOLT_PIN, 20, R5, R6) < 1300){
       Bulk == 1; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
     }else{
       Bulk == 0; //Set Bulk to 0 if the Battery voltage is higher than 13.0V
     }
+    digitalWrite(LM_ENABLE_PIN, LOW); //Turn on LM2576 after the measurement
  
-    /* --------------------------------- */
-    /* Enter bulk charging mode */
+    /* ------------------------------------------------------------ */
+    /* Enter bulk charging mode with MPPT algorithm on*/
     while(Bulk == 1 && timeDifference < timeMain){
-      //SetCharging(1470); //Set the charging voltage to 14.7 Volts
+      SetCharging(1470); //Set the charging voltage to 14.7 Volts
       
       currentTime = millis();
       timeDifference = currentTime - tempTime;
     }
 
-    /* --------------------------------- */
-    /* Enter float-storage charging mode */
+    /* ------------------------------------------------------------ */
+    /* Enter float-storage charging mode with MPPT algorithm off*/
     while(Bulk == 0 && timeDifference < timeMain){
-      //SetCharging(1370); //Set the charging voltage to 13.70 Volts
+      SetCharging(1370); //Set the charging voltage to 13.70 Volts
 
       currentTime = millis();
       timeDifference = currentTime - tempTime;
@@ -108,7 +112,7 @@ void SetCharging(int Voltage_mV){
 }
 
 
-/* ---------------------------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------------------------------------------- */
 /* Function that send a report on the current status of the charger through bluetooth/USB serial port */
 void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool Bulk, bool bt){
   int RX_PIN = 0, TX_PIN = 1; //Define serial port pins for standard Arduino USB Serial port (by default)
