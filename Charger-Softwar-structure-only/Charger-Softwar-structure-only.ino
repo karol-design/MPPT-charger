@@ -4,14 +4,24 @@ void setup() {
   //...
 }
 
+
+
 void loop() {
+  unsigned long currentTime = 0, tempTime = 0, timeDifference = 0; //Variables for time management in the main loop
   int BAT_voltage, PV_voltage, PV_current; //Values of measured voltages and currents in mV
   bool Day, Bulk;
 
+  currentTime = millis();
+  timeDifference = currentTime - tempTime;
+
   /* Main loop of the code set to regularly check if it's Day or Night and to send report over Bluetooth */
   while(1){
+    currentTime = millis(); //Save current execution time
+    timeDifference = currentTime - tempTime;
+  
     digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576
     PV_voltage = measureAverage(PV_VOLT_PIN, 20, R3, R4);
+
 
     /* ------------------------------------- */
     /* Enter Day Mode if PV_voltage > 12.0 V */
