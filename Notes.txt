@@ -2,11 +2,9 @@
 
 2) Wymienić kondensator na wejściu LM2576 na 470uF (25V)
 
-3) Dodać algorytm spowalniający włączenie LM2576 o 5s;
+3) Dodać decoupling capacitors do układu Atmegi (100nF ceramic capacitor for high-frequency noise smoothing);
 
-4) Dodać decoupling capacitors do układu Atmegi (100nF ceramic capacitor for high-frequency noise smoothing);
-
-5) Dodać LM_ENABLE pin podłączony do Atmegi328 na schemacie
+4) Dodać LM_ENABLE pin podłączony do Atmegi328 na schemacie
 
 Przetestować układ sprzężenia zwrotnego:
 1) Sprawdzić jak układ działa, kiedy jest podłączony do LM2576 ale podawane napięcia oscylują między 1-3V. Czy wzmiacniacz operacyjny zmienia napięcie wyjściowe?
@@ -14,3 +12,8 @@ Przetestować układ sprzężenia zwrotnego:
 3) Wypróbować inny wzmacniacz operacyjny rail-to-rail;
 4) Wypróbować zewnętrzny DAC
 5) (w razie potrzeby) Przeprojektować system Feedback.
+
+
+5) Przygotować wersję programu testujące poszczególne funkcje
+
+6) Zapoznać się z tematyką OOP (Object Oriented Programming) i stworzyć bibliotekę do kodu Arduino w celu zwiększenia czytelności, elastyczności i uniwersalności
