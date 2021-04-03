@@ -84,6 +84,15 @@ void loop() {
       currentTime = millis();
       timeDifference = currentTime - tempTime;
     }
+
+    /* --------------------------------------------------------------------------- */
+    /*Measure the average of n = 20 readings from analog pins and generate reports */
+    BAT_voltage = measureAverage(BAT_VOLT_PIN, 20, R5, R6);
+    PV_voltage = measureAverage(PV_VOLT_PIN, 20, R3, R4);
+    PV_current = (measureAverage(PV_CURRENT_PIN, 20, 1, 0) - 2500)*10; //No voltage div, hence R1=0 & R2=1, 2.5 V nominal, then 1mV = 10 mA
+    
+    generateReport(BAT_voltage, PV_voltage, PV_current, Bulk, 1); //Send report over bluetooth (bt = 1)
+    generateReport(BAT_voltage, PV_voltage, PV_current, Bulk, 0); //Send report over USB serial port
   }
 }
 
