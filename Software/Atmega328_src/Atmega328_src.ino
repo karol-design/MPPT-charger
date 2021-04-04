@@ -1,4 +1,4 @@
-/*  Name: MPPT Solar Charger with Bluetooth communication | Main software file
+/*  Name: MPPT Solar Charger with Bluetooth communication | Source file
  *  Author: Karol Wojsław
  *  Date: 04/04/2021 (last release)
  *  Description: Code for Atmega328 microcontroller on MPPT charge controller board [...]
