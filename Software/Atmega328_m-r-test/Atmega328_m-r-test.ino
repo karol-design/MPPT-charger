@@ -4,7 +4,6 @@
  *  Description: For test purposes only
  */
 
-
 #include <SoftwareSerial.h>
 
 /*Define pin allocations on Arduino board */
