@@ -142,6 +142,7 @@ void SetCharging(unsigned long Voltage_mV){
   unsigned long V_ref_mV = ((((R8 + R9)*(long)1235)/R8) - ((R9 * Voltage_mV)/R8));
   unsigned long V_ref = map(V_ref_mV, 0, Vin_mV, 0, 1024); //Map value of Reference voltage in mV to 10bit value (0-1024)
   analogWrite(PWM_PIN, V_ref); //Set reference voltage on PWM pin
+  return;
 }
 
 
@@ -176,4 +177,5 @@ void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool Bulk, 
   serialPort.print(" mW \nBattery SOC (state of charge) ");
   serialPort.print((BAT_voltage - 11820)/13);
   serialPort.print(" % of full capacity \n\n\n");
+  return;
 }
