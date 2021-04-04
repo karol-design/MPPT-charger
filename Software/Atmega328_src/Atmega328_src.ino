@@ -158,23 +158,23 @@ void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool Bulk, 
   SoftwareSerial serialPort(RX_PIN, TX_PIN); //Define Software serial port
   serialPort.begin(9600); //Serial port configuration (baud rate: 9600)
 
-  serialPort.print("---------------------------------------------\n");
-  serialPort.print("MPPT Solar Charger with Bt | Current status: \nPV panel status:: ");
+  serialPort.print("------------------------------------------------------------------\n");
+  serialPort.print("MPPT Solar Charger with bluetooth communication | Current status: \n\nPV panel illuminated:\t\t");
   serialPort.print(PV_voltage > 1300); //Print 1 if PV panel is illuminated by the sunlight (PV_V > 13.0V)
-  serialPort.print(",Illuminated (1) / Shaded/Night (0)\nCurrent charging mode:");
+  serialPort.print(" (Illuminated/Shaded)\nCurrent charging mode:\t\t");
   if(Bulk == 1){
-    serialPort.print("Bulk mode (MPPT algorithm on)\nBattery voltage: ");
+    serialPort.print("Bulk mode (MPPT algorithm on)\nBattery voltage:\t\t");
   }else if(Bulk == 0){
-    serialPort.print("Float mode (MPPT algorithm off)\nBattery voltage: ");
+    serialPort.print("Float mode (MPPT algorithm off)\nBattery voltage:\t\t");
   }
-  serialPort.print(BAT_voltage);
-  serialPort.print(" mV \nPhotovoltaic panel voltage: ");
-  serialPort.print(PV_voltage);
-  serialPort.print(" mV \nPhotovoltaic panel current: ");
-  serialPort.print(PV_current);
-  serialPort.print(" mA \nPower delivered by PV panel: ");
-  serialPort.print(PV_current * PV_voltage);
-  serialPort.print(" mW \nBattery SOC (state of charge) ");
+  serialPort.print(BAT_voltage / (float) 1000.0, 3);
+  serialPort.print(" V \nPhotovoltaic panel voltage:\t");
+  serialPort.print(PV_voltage / (float) 1000.0, 3);
+  serialPort.print(" V \nPhotovoltaic panel current:\t");
+  serialPort.print(PV_current / (float) 1000.0, 3);
+  serialPort.print(" A \nPower delivered by PV panel:\t");
+  serialPort.print(((PV_current * (long) PV_voltage) / 1000000.0), 3);
+  serialPort.print(" W \nBattery SOC (state of charge)\t");
   serialPort.print((BAT_voltage - 11820)/13);
   serialPort.print(" % of full capacity \n\n\n");
   return;
