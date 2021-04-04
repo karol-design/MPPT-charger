@@ -26,11 +26,11 @@
 #define LED_PIN         9
 
 /*Fill in values below after callibration for improved precision of measurements and charger performance */
-#define Vin_mV 5000 //Atmega328 supply voltage in mV
-#define R3  4700 
+#define Vin_mV 5050 //Atmega328 supply voltage in mV
+#define R3  5040 
 #define R4  1000
-#define R5  4700
-#define R6  1000
+#define R5  5090
+#define R6  982
 #define R8  12000
 #define R9  9000
 
