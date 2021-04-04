@@ -15783,23 +15783,23 @@ naming: grid - package width</description>
 <instance part="SUPPLY2" gate="GND" x="53.34" y="73.66" smashed="yes" grouprefs="LM2576_BUCK_CONVERTER">
 <attribute name="VALUE" x="51.435" y="70.485" size="1.778" layer="96"/>
 </instance>
-<instance part="IC2" gate="G$1" x="73.66" y="15.24" smashed="yes" grouprefs="LM2576_FEEDBACK">
-<attribute name="NAME" x="76.2" y="18.415" size="1.778" layer="95"/>
-<attribute name="VALUE" x="76.2" y="10.16" size="1.778" layer="96"/>
+<instance part="IC2" gate="G$1" x="66.04" y="15.24" smashed="yes" grouprefs="LM2576_FEEDBACK">
+<attribute name="NAME" x="68.58" y="18.415" size="1.778" layer="95"/>
+<attribute name="VALUE" x="68.58" y="10.16" size="1.778" layer="96"/>
 </instance>
-<instance part="R2" gate="G$1" x="40.64" y="17.78" smashed="yes" rot="R180" grouprefs="LM2576_FEEDBACK">
-<attribute name="NAME" x="44.45" y="16.2814" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="44.45" y="21.082" size="1.778" layer="96" rot="R180"/>
+<instance part="R2" gate="G$1" x="33.02" y="17.78" smashed="yes" rot="R180" grouprefs="LM2576_FEEDBACK">
+<attribute name="NAME" x="36.83" y="16.2814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="36.83" y="21.082" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C3" gate="G$1" x="50.8" y="10.16" smashed="yes" grouprefs="LM2576_FEEDBACK">
-<attribute name="NAME" x="51.816" y="10.795" size="1.778" layer="95"/>
-<attribute name="VALUE" x="51.816" y="5.969" size="1.778" layer="96"/>
+<instance part="C3" gate="G$1" x="43.18" y="10.16" smashed="yes" grouprefs="LM2576_FEEDBACK">
+<attribute name="NAME" x="44.196" y="10.795" size="1.778" layer="95"/>
+<attribute name="VALUE" x="44.196" y="5.969" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY3" gate="GND" x="73.66" y="-5.08" smashed="yes" grouprefs="LM2576_FEEDBACK">
-<attribute name="VALUE" x="71.755" y="-8.255" size="1.778" layer="96"/>
+<instance part="SUPPLY3" gate="GND" x="66.04" y="-5.08" smashed="yes" grouprefs="LM2576_FEEDBACK">
+<attribute name="VALUE" x="64.135" y="-8.255" size="1.778" layer="96"/>
 </instance>
-<instance part="P+2" gate="1" x="73.66" y="30.48" smashed="yes" grouprefs="LM2576_FEEDBACK">
-<attribute name="VALUE" x="71.12" y="25.4" size="1.778" layer="96" rot="R90"/>
+<instance part="P+2" gate="1" x="66.04" y="30.48" smashed="yes" grouprefs="LM2576_FEEDBACK">
+<attribute name="VALUE" x="63.5" y="25.4" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R3" gate="G$1" x="40.64" y="73.66" smashed="yes" rot="R90" grouprefs="LM2576_BUCK_CONVERTER">
 <attribute name="NAME" x="39.1414" y="69.85" size="1.778" layer="95" rot="R90"/>
@@ -15851,27 +15851,27 @@ naming: grid - package width</description>
 <instance part="P+3" gate="1" x="30.48" y="101.6" smashed="yes" grouprefs="LM2576_BUCK_CONVERTER">
 <attribute name="VALUE" x="27.94" y="96.52" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C4" gate="G$1" x="127" y="15.24" smashed="yes" grouprefs="5V_REGULATOR">
-<attribute name="NAME" x="128.016" y="15.875" size="1.778" layer="95"/>
-<attribute name="VALUE" x="128.016" y="11.049" size="1.778" layer="96"/>
+<instance part="C4" gate="G$1" x="124.46" y="15.24" smashed="yes" grouprefs="5V_REGULATOR">
+<attribute name="NAME" x="125.476" y="15.875" size="1.778" layer="95"/>
+<attribute name="VALUE" x="125.476" y="11.049" size="1.778" layer="96"/>
 </instance>
-<instance part="C5" gate="G$1" x="160.02" y="15.24" smashed="yes" grouprefs="5V_REGULATOR">
-<attribute name="NAME" x="161.036" y="15.875" size="1.778" layer="95"/>
-<attribute name="VALUE" x="161.036" y="11.049" size="1.778" layer="96"/>
+<instance part="C5" gate="G$1" x="157.48" y="15.24" smashed="yes" grouprefs="5V_REGULATOR">
+<attribute name="NAME" x="158.496" y="15.875" size="1.778" layer="95"/>
+<attribute name="VALUE" x="158.496" y="11.049" size="1.778" layer="96"/>
 </instance>
-<instance part="LED1" gate="G$1" x="185.42" y="15.24" smashed="yes" grouprefs="5V_REGULATOR">
-<attribute name="NAME" x="188.976" y="10.668" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="191.135" y="10.668" size="1.778" layer="96" rot="R90"/>
+<instance part="LED1" gate="G$1" x="182.88" y="15.24" smashed="yes" grouprefs="5V_REGULATOR">
+<attribute name="NAME" x="186.436" y="10.668" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="188.595" y="10.668" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY9" gate="GND" x="144.78" y="-5.08" smashed="yes" grouprefs="5V_REGULATOR">
-<attribute name="VALUE" x="142.875" y="-8.255" size="1.778" layer="96"/>
+<instance part="SUPPLY9" gate="GND" x="142.24" y="-5.08" smashed="yes" grouprefs="5V_REGULATOR">
+<attribute name="VALUE" x="140.335" y="-8.255" size="1.778" layer="96"/>
 </instance>
-<instance part="P+4" gate="1" x="185.42" y="30.48" smashed="yes" grouprefs="5V_REGULATOR">
-<attribute name="VALUE" x="182.88" y="25.4" size="1.778" layer="96" rot="R90"/>
+<instance part="P+4" gate="1" x="182.88" y="30.48" smashed="yes" grouprefs="5V_REGULATOR">
+<attribute name="VALUE" x="180.34" y="25.4" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R7" gate="G$1" x="175.26" y="0" smashed="yes" rot="R180" grouprefs="5V_REGULATOR">
-<attribute name="NAME" x="179.07" y="-1.4986" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="179.07" y="3.302" size="1.778" layer="96" rot="R180"/>
+<instance part="R7" gate="G$1" x="172.72" y="0" smashed="yes" rot="R180" grouprefs="5V_REGULATOR">
+<attribute name="NAME" x="176.53" y="-1.4986" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="176.53" y="3.302" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="R8" gate="G$1" x="127" y="96.52" smashed="yes" rot="R90" grouprefs="LM2576_BUCK_CONVERTER">
 <attribute name="NAME" x="125.5014" y="92.71" size="1.778" layer="95" rot="R90"/>
@@ -15888,94 +15888,94 @@ naming: grid - package width</description>
 <instance part="SUPPLY10" gate="GND" x="177.8" y="55.88" smashed="yes" grouprefs="LM2576_BUCK_CONVERTER">
 <attribute name="VALUE" x="175.895" y="52.705" size="1.778" layer="96"/>
 </instance>
-<instance part="U1" gate="U1" x="284.48" y="50.8" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="NAME" x="266.7" y="79.502" size="1.778" layer="95"/>
-<attribute name="VALUE" x="266.7" y="12.7" size="1.778" layer="96"/>
+<instance part="U1" gate="U1" x="287.02" y="35.56" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="NAME" x="269.24" y="64.262" size="1.778" layer="95"/>
+<attribute name="VALUE" x="269.24" y="-2.54" size="1.778" layer="96"/>
 </instance>
-<instance part="Y1" gate="G$1" x="251.46" y="48.26" smashed="yes" rot="R90" grouprefs="ATMEGA328">
-<attribute name="NAME" x="249.428" y="48.26" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
-<attribute name="VALUE" x="256.54" y="50.292" size="1.778" layer="96" font="vector" rot="R180" align="top-center"/>
+<instance part="Y1" gate="G$1" x="254" y="33.02" smashed="yes" rot="R90" grouprefs="ATMEGA328">
+<attribute name="NAME" x="251.968" y="33.02" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="259.08" y="35.052" size="1.778" layer="96" font="vector" rot="R180" align="top-center"/>
 </instance>
-<instance part="C6" gate="G$1" x="241.3" y="53.34" smashed="yes" rot="R90" grouprefs="ATMEGA328">
-<attribute name="NAME" x="240.919" y="54.864" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="245.999" y="54.864" size="1.778" layer="96" rot="R90"/>
+<instance part="C6" gate="G$1" x="243.84" y="38.1" smashed="yes" rot="R90" grouprefs="ATMEGA328">
+<attribute name="NAME" x="243.459" y="39.624" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="248.539" y="39.624" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C7" gate="G$1" x="241.3" y="43.18" smashed="yes" rot="R90" grouprefs="ATMEGA328">
-<attribute name="NAME" x="240.919" y="44.704" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="245.999" y="44.704" size="1.778" layer="96" rot="R90"/>
+<instance part="C7" gate="G$1" x="243.84" y="27.94" smashed="yes" rot="R90" grouprefs="ATMEGA328">
+<attribute name="NAME" x="243.459" y="29.464" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="248.539" y="29.464" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="C8" gate="G$1" x="228.6" y="50.8" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="227.076" y="50.419" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="227.076" y="55.499" size="1.778" layer="96" rot="R180"/>
+<instance part="C8" gate="G$1" x="231.14" y="35.56" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="229.616" y="35.179" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="229.616" y="40.259" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY12" gate="GND" x="236.22" y="35.56" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="234.315" y="32.385" size="1.778" layer="96"/>
+<instance part="SUPPLY12" gate="GND" x="238.76" y="20.32" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="236.855" y="17.145" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY13" gate="GND" x="218.44" y="35.56" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="216.535" y="32.385" size="1.778" layer="96"/>
+<instance part="SUPPLY13" gate="GND" x="220.98" y="20.32" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="219.075" y="17.145" size="1.778" layer="96"/>
 </instance>
-<instance part="P+6" gate="1" x="208.28" y="81.28" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="205.74" y="76.2" size="1.778" layer="96" rot="R90"/>
+<instance part="P+6" gate="1" x="220.98" y="63.5" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="218.44" y="58.42" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="S1" gate="1" x="228.6" y="91.44" smashed="yes" rot="R270" grouprefs="ATMEGA328">
-<attribute name="NAME" x="226.06" y="97.79" size="1.778" layer="95"/>
-<attribute name="VALUE" x="231.775" y="95.25" size="1.778" layer="96"/>
+<instance part="S1" gate="1" x="246.38" y="76.2" smashed="yes" rot="R270" grouprefs="ATMEGA328">
+<attribute name="NAME" x="243.84" y="82.55" size="1.778" layer="95"/>
+<attribute name="VALUE" x="249.555" y="80.01" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY14" gate="GND" x="218.44" y="78.74" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="216.535" y="75.565" size="1.778" layer="96"/>
+<instance part="SUPPLY14" gate="GND" x="233.68" y="66.04" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="231.775" y="62.865" size="1.778" layer="96"/>
 </instance>
-<instance part="R12" gate="G$1" x="246.38" y="88.9" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="250.19" y="87.4014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="250.19" y="92.202" size="1.778" layer="96" rot="R180"/>
+<instance part="R12" gate="G$1" x="264.16" y="73.66" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="267.97" y="72.1614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="267.97" y="76.962" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+7" gate="1" x="254" y="104.14" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="251.46" y="99.06" size="1.778" layer="96" rot="R90"/>
+<instance part="P+7" gate="1" x="276.86" y="81.28" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="274.32" y="76.2" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="SUPPLY15" gate="GND" x="256.54" y="10.16" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="254.635" y="6.985" size="1.778" layer="96"/>
+<instance part="SUPPLY15" gate="GND" x="259.08" y="-7.62" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="257.175" y="-10.795" size="1.778" layer="96"/>
 </instance>
-<instance part="C9" gate="G$1" x="256.54" y="22.86" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="255.016" y="22.479" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="255.016" y="27.559" size="1.778" layer="96" rot="R180"/>
+<instance part="C9" gate="G$1" x="259.08" y="7.62" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="257.556" y="7.239" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="257.556" y="12.319" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+8" gate="1" x="256.54" y="35.56" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="254" y="30.48" size="1.778" layer="96" rot="R90"/>
+<instance part="P+8" gate="1" x="259.08" y="20.32" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="256.54" y="15.24" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="LED2" gate="G$1" x="327.66" y="7.62" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="NAME" x="331.216" y="3.048" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="333.375" y="3.048" size="1.778" layer="96" rot="R90"/>
+<instance part="LED2" gate="G$1" x="330.2" y="2.54" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="NAME" x="333.756" y="-2.032" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="335.915" y="-2.032" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="R10" gate="G$1" x="317.5" y="15.24" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="321.31" y="13.7414" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="321.31" y="18.542" size="1.778" layer="96" rot="R180"/>
+<instance part="R10" gate="G$1" x="320.04" y="10.16" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="323.85" y="8.6614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="323.85" y="13.462" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SG1" gate="G$1" x="340.36" y="7.62" smashed="yes" rot="R270" grouprefs="ATMEGA328">
-<attribute name="NAME" x="346.71" y="10.16" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="340.36" y="1.27" size="1.778" layer="96" rot="R270"/>
+<instance part="SG1" gate="G$1" x="342.9" y="7.62" smashed="yes" rot="R270" grouprefs="ATMEGA328">
+<attribute name="NAME" x="349.25" y="10.16" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="342.9" y="1.27" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="R11" gate="G$1" x="327.66" y="20.32" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="331.47" y="18.8214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="331.47" y="23.622" size="1.778" layer="96" rot="R180"/>
+<instance part="R11" gate="G$1" x="330.2" y="15.24" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="334.01" y="13.7414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="334.01" y="18.542" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY11" gate="GND" x="327.66" y="-2.54" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="325.755" y="-5.715" size="1.778" layer="96"/>
+<instance part="SUPPLY11" gate="GND" x="330.2" y="-7.62" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="328.295" y="-10.795" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY16" gate="GND" x="337.82" y="-2.54" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="335.915" y="-5.715" size="1.778" layer="96"/>
+<instance part="SUPPLY16" gate="GND" x="340.36" y="-7.62" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="338.455" y="-10.795" size="1.778" layer="96"/>
 </instance>
-<instance part="X2" gate="G$1" x="340.36" y="50.8" smashed="yes" rot="R90" grouprefs="ATMEGA328">
-<attribute name="NAME" x="336.55" y="48.26" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="353.06" y="58.42" size="1.778" layer="96" rot="R180"/>
+<instance part="X2" gate="G$1" x="335.28" y="45.72" smashed="yes" rot="R90" grouprefs="ATMEGA328">
+<attribute name="NAME" x="331.47" y="43.18" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="347.98" y="53.34" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY17" gate="GND" x="363.22" y="27.94" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="361.315" y="24.765" size="1.778" layer="96"/>
+<instance part="SUPPLY17" gate="GND" x="358.14" y="22.86" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="356.235" y="19.685" size="1.778" layer="96"/>
 </instance>
-<instance part="P+5" gate="1" x="360.68" y="66.04" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="358.14" y="60.96" size="1.778" layer="96" rot="R90"/>
+<instance part="P+5" gate="1" x="355.6" y="60.96" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="353.06" y="55.88" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="X3" gate="G$1" x="271.78" y="91.44" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="274.32" y="87.63" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="264.16" y="106.68" size="1.778" layer="96" rot="R270"/>
+<instance part="X3" gate="G$1" x="284.48" y="91.44" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="287.02" y="87.63" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="276.86" y="106.68" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="JP3" gate="A" x="167.64" y="93.98" smashed="yes" rot="R90" grouprefs="LM2576_BUCK_CONVERTER">
 <attribute name="NAME" x="167.64" y="92.71" size="1.778" layer="95" rot="R180"/>
@@ -15989,49 +15989,49 @@ naming: grid - package width</description>
 <attribute name="NAME" x="26.67" y="58.42" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="33.655" y="58.42" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="JP4" gate="A" x="363.22" y="53.34" smashed="yes" rot="R270" grouprefs="ATMEGA328">
-<attribute name="NAME" x="363.22" y="54.61" size="1.778" layer="95"/>
-<attribute name="VALUE" x="363.22" y="47.625" size="1.778" layer="96"/>
+<instance part="JP4" gate="A" x="358.14" y="48.26" smashed="yes" rot="R270" grouprefs="ATMEGA328">
+<attribute name="NAME" x="358.14" y="49.53" size="1.778" layer="95"/>
+<attribute name="VALUE" x="358.14" y="42.545" size="1.778" layer="96"/>
 </instance>
-<instance part="JP5" gate="G$1" x="210.82" y="7.62" smashed="yes" rot="R90" grouprefs="ATMEGA328">
-<attribute name="NAME" x="210.82" y="3.81" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="210.82" y="15.875" size="1.778" layer="96" rot="R180"/>
+<instance part="JP5" gate="G$1" x="231.14" y="99.06" smashed="yes" rot="R90" grouprefs="ATMEGA328">
+<attribute name="NAME" x="231.14" y="95.25" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="231.14" y="107.315" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY18" gate="GND" x="299.72" y="96.52" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="297.815" y="93.345" size="1.778" layer="96"/>
+<instance part="SUPPLY18" gate="GND" x="312.42" y="96.52" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="310.515" y="93.345" size="1.778" layer="96"/>
 </instance>
-<instance part="P+9" gate="1" x="279.4" y="109.22" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="276.86" y="109.22" size="1.778" layer="96" rot="R180"/>
+<instance part="P+9" gate="1" x="292.1" y="109.22" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="289.56" y="109.22" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="P+10" gate="1" x="218.44" y="17.78" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="215.9" y="17.78" size="1.778" layer="96" rot="R180"/>
+<instance part="P+10" gate="1" x="238.76" y="109.22" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="236.22" y="109.22" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="SUPPLY19" gate="GND" x="238.76" y="5.08" smashed="yes" grouprefs="ATMEGA328">
-<attribute name="VALUE" x="236.855" y="1.905" size="1.778" layer="96"/>
+<instance part="SUPPLY19" gate="GND" x="259.08" y="96.52" smashed="yes" grouprefs="ATMEGA328">
+<attribute name="VALUE" x="257.175" y="93.345" size="1.778" layer="96"/>
 </instance>
-<instance part="IC3" gate="G$1" x="144.78" y="22.86" smashed="yes" grouprefs="5V_REGULATOR">
-<attribute name="NAME" x="147.32" y="15.24" size="1.778" layer="95"/>
-<attribute name="VALUE" x="147.32" y="12.7" size="1.778" layer="96"/>
+<instance part="IC3" gate="G$1" x="142.24" y="22.86" smashed="yes" grouprefs="5V_REGULATOR">
+<attribute name="NAME" x="144.78" y="15.24" size="1.778" layer="95"/>
+<attribute name="VALUE" x="144.78" y="12.7" size="1.778" layer="96"/>
 </instance>
-<instance part="R13" gate="G$1" x="332.74" y="38.1" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="336.55" y="36.6014" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="336.55" y="41.402" size="1.778" layer="96" rot="R180"/>
+<instance part="R13" gate="G$1" x="327.66" y="27.94" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="331.47" y="26.4414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="331.47" y="31.242" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="R14" gate="G$1" x="353.06" y="33.02" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="356.87" y="31.5214" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="356.87" y="36.322" size="1.778" layer="96" rot="R180"/>
+<instance part="R14" gate="G$1" x="347.98" y="27.94" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="351.79" y="26.4414" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="351.79" y="31.242" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C10" gate="G$1" x="218.44" y="50.8" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="216.916" y="50.419" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="216.916" y="55.499" size="1.778" layer="96" rot="R180"/>
+<instance part="C10" gate="G$1" x="220.98" y="35.56" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="219.456" y="35.179" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="219.456" y="40.259" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C11" gate="G$1" x="208.28" y="50.8" smashed="yes" rot="R180" grouprefs="ATMEGA328">
-<attribute name="NAME" x="206.756" y="50.419" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="206.756" y="55.499" size="1.778" layer="96" rot="R180"/>
+<instance part="C11" gate="G$1" x="210.82" y="35.56" smashed="yes" rot="R180" grouprefs="ATMEGA328">
+<attribute name="NAME" x="209.296" y="35.179" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="209.296" y="40.259" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C12" gate="G$1" x="175.26" y="12.7" smashed="yes" rot="R180" grouprefs="5V_REGULATOR">
-<attribute name="NAME" x="173.736" y="12.319" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="173.736" y="17.399" size="1.778" layer="96" rot="R180"/>
+<instance part="C12" gate="G$1" x="172.72" y="12.7" smashed="yes" rot="R180" grouprefs="5V_REGULATOR">
+<attribute name="NAME" x="171.196" y="12.319" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="171.196" y="17.399" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -16078,16 +16078,11 @@ naming: grid - package width</description>
 <wire x1="73.66" y1="86.36" x2="73.66" y2="63.5" width="0.1524" layer="91" grouprefs="LM2576_BUCK_CONVERTER"/>
 <wire x1="73.66" y1="63.5" x2="76.2" y2="63.5" width="0.1524" layer="91" grouprefs="LM2576_BUCK_CONVERTER"/>
 </segment>
-<segment>
-<pinref part="U1" gate="U1" pin="PD4(XCK/T0)"/>
-<wire x1="307.34" y1="43.18" x2="317.5" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="317.5" y="43.18" size="1.778" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
-</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
 <pinref part="IC2" gate="G$1" pin="V+"/>
-<wire x1="73.66" y1="22.86" x2="73.66" y2="27.94" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="66.04" y1="22.86" x2="66.04" y2="27.94" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
 <pinref part="P+2" gate="1" pin="+5V"/>
 </segment>
 <segment>
@@ -16097,67 +16092,66 @@ naming: grid - package width</description>
 <pinref part="P+3" gate="1" pin="+5V"/>
 </segment>
 <segment>
-<wire x1="152.4" y1="22.86" x2="160.02" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="149.86" y1="22.86" x2="157.48" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
 <pinref part="C5" gate="G$1" pin="1"/>
-<wire x1="160.02" y1="22.86" x2="160.02" y2="17.78" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="157.48" y1="22.86" x2="157.48" y2="17.78" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
 <pinref part="LED1" gate="G$1" pin="A"/>
-<wire x1="160.02" y1="22.86" x2="175.26" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="175.26" y1="22.86" x2="185.42" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="185.42" y1="22.86" x2="185.42" y2="17.78" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<junction x="160.02" y="22.86" grouprefs="5V_REGULATOR"/>
-<junction x="185.42" y="22.86" grouprefs="5V_REGULATOR"/>
+<wire x1="157.48" y1="22.86" x2="172.72" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="172.72" y1="22.86" x2="182.88" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="182.88" y1="22.86" x2="182.88" y2="17.78" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<junction x="157.48" y="22.86" grouprefs="5V_REGULATOR"/>
+<junction x="182.88" y="22.86" grouprefs="5V_REGULATOR"/>
 <pinref part="P+4" gate="1" pin="+5V"/>
-<wire x1="185.42" y1="22.86" x2="185.42" y2="27.94" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="182.88" y1="22.86" x2="182.88" y2="27.94" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
 <pinref part="IC3" gate="G$1" pin="OUT"/>
 <pinref part="C12" gate="G$1" pin="2"/>
-<wire x1="175.26" y1="17.78" x2="175.26" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<junction x="175.26" y="22.86" grouprefs="5V_REGULATOR"/>
+<wire x1="172.72" y1="17.78" x2="172.72" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<junction x="172.72" y="22.86" grouprefs="5V_REGULATOR"/>
+</segment>
+<segment>
+<pinref part="U1" gate="U1" pin="VCC"/>
+<wire x1="266.7" y1="53.34" x2="264.16" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="264.16" y1="53.34" x2="220.98" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="220.98" y1="53.34" x2="220.98" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<pinref part="U1" gate="U1" pin="AVCC"/>
+<wire x1="266.7" y1="55.88" x2="264.16" y2="55.88" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="264.16" y1="55.88" x2="264.16" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="264.16" y="53.34" grouprefs="ATMEGA328"/>
+<pinref part="P+6" gate="1" pin="+5V"/>
+<pinref part="C10" gate="G$1" pin="2"/>
+<wire x1="220.98" y1="40.64" x2="220.98" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="220.98" y="53.34" grouprefs="ATMEGA328"/>
+<pinref part="C11" gate="G$1" pin="2"/>
+<wire x1="210.82" y1="40.64" x2="210.82" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="210.82" y1="53.34" x2="220.98" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="R12" gate="G$1" pin="1"/>
-<wire x1="251.46" y1="88.9" x2="254" y2="88.9" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="269.24" y1="73.66" x2="276.86" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="P+7" gate="1" pin="+5V"/>
-<wire x1="254" y1="88.9" x2="254" y2="101.6" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="276.86" y1="73.66" x2="276.86" y2="78.74" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
 <pinref part="C9" gate="G$1" pin="2"/>
-<wire x1="256.54" y1="33.02" x2="256.54" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="259.08" y1="17.78" x2="259.08" y2="12.7" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="X3" gate="G$1" pin="5"/>
-<wire x1="276.86" y1="101.6" x2="279.4" y2="101.6" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="279.4" y1="101.6" x2="279.4" y2="106.68" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="289.56" y1="101.6" x2="292.1" y2="101.6" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="292.1" y1="101.6" x2="292.1" y2="106.68" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="P+9" gate="1" pin="+5V"/>
 </segment>
 <segment>
 <pinref part="JP5" gate="G$1" pin="4"/>
-<wire x1="213.36" y1="12.7" x2="218.44" y2="12.7" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="218.44" y1="12.7" x2="218.44" y2="15.24" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="233.68" y1="104.14" x2="238.76" y2="104.14" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="238.76" y1="104.14" x2="238.76" y2="106.68" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="P+10" gate="1" pin="+5V"/>
 </segment>
 <segment>
 <pinref part="JP4" gate="A" pin="1"/>
-<wire x1="360.68" y1="53.34" x2="360.68" y2="63.5" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="355.6" y1="48.26" x2="355.6" y2="58.42" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="P+5" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="U1" gate="U1" pin="VCC"/>
-<wire x1="264.16" y1="68.58" x2="261.62" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="261.62" y1="68.58" x2="218.44" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<pinref part="U1" gate="U1" pin="AVCC"/>
-<wire x1="264.16" y1="71.12" x2="261.62" y2="71.12" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="261.62" y1="71.12" x2="261.62" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="261.62" y="68.58" grouprefs="ATMEGA328"/>
-<pinref part="C10" gate="G$1" pin="2"/>
-<wire x1="218.44" y1="55.88" x2="218.44" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="218.44" y="68.58" grouprefs="ATMEGA328"/>
-<pinref part="C11" gate="G$1" pin="2"/>
-<wire x1="208.28" y1="55.88" x2="208.28" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="208.28" y1="68.58" x2="218.44" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<pinref part="P+6" gate="1" pin="+5V"/>
-<wire x1="208.28" y1="78.74" x2="208.28" y2="68.58" width="0.1524" layer="91"/>
-<junction x="208.28" y="68.58"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -16181,13 +16175,13 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="V-"/>
-<wire x1="73.66" y1="7.62" x2="73.66" y2="0" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="66.04" y1="7.62" x2="66.04" y2="0" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
 <pinref part="SUPPLY3" gate="GND" pin="GND"/>
 <pinref part="C3" gate="G$1" pin="2"/>
-<wire x1="73.66" y1="0" x2="73.66" y2="-2.54" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<wire x1="50.8" y1="5.08" x2="50.8" y2="0" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<wire x1="50.8" y1="0" x2="73.66" y2="0" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<junction x="73.66" y="0" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="66.04" y1="0" x2="66.04" y2="-2.54" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="43.18" y1="5.08" x2="43.18" y2="0" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="43.18" y1="0" x2="66.04" y2="0" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<junction x="66.04" y="0" grouprefs="LM2576_FEEDBACK"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
@@ -16215,24 +16209,24 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
-<wire x1="160.02" y1="10.16" x2="160.02" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="160.02" y1="7.62" x2="144.78" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="144.78" y1="7.62" x2="144.78" y2="15.24" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="157.48" y1="10.16" x2="157.48" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="157.48" y1="7.62" x2="142.24" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="142.24" y1="7.62" x2="142.24" y2="15.24" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
 <pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="127" y1="10.16" x2="127" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="127" y1="7.62" x2="144.78" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<junction x="144.78" y="7.62" grouprefs="5V_REGULATOR"/>
-<wire x1="144.78" y1="7.62" x2="144.78" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="124.46" y1="10.16" x2="124.46" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="124.46" y1="7.62" x2="142.24" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<junction x="142.24" y="7.62" grouprefs="5V_REGULATOR"/>
+<wire x1="142.24" y1="7.62" x2="142.24" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
 <pinref part="SUPPLY9" gate="GND" pin="GND"/>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="144.78" y1="0" x2="144.78" y2="-2.54" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="170.18" y1="0" x2="144.78" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<junction x="144.78" y="0" grouprefs="5V_REGULATOR"/>
+<wire x1="142.24" y1="0" x2="142.24" y2="-2.54" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="167.64" y1="0" x2="142.24" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<junction x="142.24" y="0" grouprefs="5V_REGULATOR"/>
 <pinref part="IC3" gate="G$1" pin="GND"/>
 <pinref part="C12" gate="G$1" pin="1"/>
-<wire x1="175.26" y1="10.16" x2="175.26" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="175.26" y1="7.62" x2="160.02" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<junction x="160.02" y="7.62" grouprefs="5V_REGULATOR"/>
+<wire x1="172.72" y1="10.16" x2="172.72" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="172.72" y1="7.62" x2="157.48" y2="7.62" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<junction x="157.48" y="7.62" grouprefs="5V_REGULATOR"/>
 </segment>
 <segment>
 <pinref part="SL3" gate="G$1" pin="2"/>
@@ -16244,41 +16238,41 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="C6" gate="G$1" pin="1"/>
-<wire x1="238.76" y1="53.34" x2="236.22" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="236.22" y1="53.34" x2="236.22" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="241.3" y1="38.1" x2="238.76" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="238.76" y1="38.1" x2="238.76" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="C7" gate="G$1" pin="1"/>
-<wire x1="236.22" y1="43.18" x2="236.22" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="238.76" y1="43.18" x2="236.22" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="236.22" y="43.18" grouprefs="ATMEGA328"/>
+<wire x1="238.76" y1="27.94" x2="238.76" y2="22.86" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="241.3" y1="27.94" x2="238.76" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="238.76" y="27.94" grouprefs="ATMEGA328"/>
 <pinref part="SUPPLY12" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="S1" gate="1" pin="P"/>
 <pinref part="S1" gate="1" pin="P1"/>
-<wire x1="223.52" y1="91.44" x2="223.52" y2="88.9" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="223.52" y1="88.9" x2="218.44" y2="88.9" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="218.44" y1="88.9" x2="218.44" y2="81.28" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="223.52" y="88.9" grouprefs="ATMEGA328"/>
+<wire x1="241.3" y1="76.2" x2="241.3" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="241.3" y1="73.66" x2="233.68" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="233.68" y1="73.66" x2="233.68" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="241.3" y="73.66" grouprefs="ATMEGA328"/>
 <pinref part="SUPPLY14" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="U1" gate="U1" pin="GND"/>
 <pinref part="SUPPLY15" gate="GND" pin="GND"/>
-<wire x1="264.16" y1="17.78" x2="256.54" y2="17.78" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="256.54" y1="17.78" x2="256.54" y2="12.7" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="266.7" y1="2.54" x2="259.08" y2="2.54" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="259.08" y1="2.54" x2="259.08" y2="-5.08" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="C9" gate="G$1" pin="1"/>
-<wire x1="256.54" y1="20.32" x2="256.54" y2="17.78" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="256.54" y="17.78" grouprefs="ATMEGA328"/>
+<wire x1="259.08" y1="5.08" x2="259.08" y2="2.54" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="259.08" y="2.54" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="SUPPLY11" gate="GND" pin="GND"/>
 <pinref part="LED2" gate="G$1" pin="C"/>
-<wire x1="327.66" y1="2.54" x2="327.66" y2="0" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="330.2" y1="-5.08" x2="330.2" y2="-2.54" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="SUPPLY16" gate="GND" pin="GND"/>
 <pinref part="SG1" gate="G$1" pin="2"/>
-<wire x1="337.82" y1="0" x2="337.82" y2="2.54" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="340.36" y1="-5.08" x2="340.36" y2="2.54" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="JP2" gate="A" pin="2"/>
@@ -16286,42 +16280,42 @@ naming: grid - package width</description>
 <wire x1="30.48" y1="55.88" x2="30.48" y2="50.8" width="0.1524" layer="91" grouprefs="LM2576_BUCK_CONVERTER"/>
 </segment>
 <segment>
-<wire x1="299.72" y1="101.6" x2="299.72" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="312.42" y1="101.6" x2="312.42" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="SUPPLY18" gate="GND" pin="GND"/>
-<wire x1="299.72" y1="101.6" x2="281.94" y2="101.6" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="281.94" y1="101.6" x2="281.94" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="312.42" y1="101.6" x2="294.64" y2="101.6" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="294.64" y1="101.6" x2="294.64" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="X3" gate="G$1" pin="4"/>
-<wire x1="281.94" y1="99.06" x2="276.86" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="294.64" y1="99.06" x2="289.56" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="JP5" gate="G$1" pin="3"/>
-<wire x1="213.36" y1="10.16" x2="238.76" y2="10.16" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="238.76" y1="10.16" x2="238.76" y2="7.62" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="233.68" y1="101.6" x2="259.08" y2="101.6" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="259.08" y1="101.6" x2="259.08" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="SUPPLY19" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="X2" gate="G$1" pin="4"/>
-<wire x1="347.98" y1="45.72" x2="347.98" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="347.98" y1="40.64" x2="363.22" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="342.9" y1="40.64" x2="342.9" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="342.9" y1="35.56" x2="358.14" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="SUPPLY17" gate="GND" pin="GND"/>
-<wire x1="363.22" y1="30.48" x2="363.22" y2="33.02" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="358.14" y1="25.4" x2="358.14" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="R14" gate="G$1" pin="1"/>
-<wire x1="363.22" y1="33.02" x2="363.22" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="358.14" y1="33.02" x2="363.22" y2="33.02" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="363.22" y="33.02" grouprefs="ATMEGA328"/>
+<wire x1="358.14" y1="27.94" x2="358.14" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="353.06" y1="27.94" x2="358.14" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="358.14" y="27.94" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="C8" gate="G$1" pin="1"/>
-<wire x1="228.6" y1="48.26" x2="228.6" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="231.14" y1="33.02" x2="231.14" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="C10" gate="G$1" pin="1"/>
-<wire x1="218.44" y1="48.26" x2="218.44" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="218.44" y1="43.18" x2="228.6" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="220.98" y1="33.02" x2="220.98" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="220.98" y1="27.94" x2="231.14" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="C11" gate="G$1" pin="1"/>
-<wire x1="208.28" y1="48.26" x2="208.28" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="208.28" y1="43.18" x2="218.44" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="218.44" y="43.18" grouprefs="ATMEGA328"/>
+<wire x1="210.82" y1="33.02" x2="210.82" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="210.82" y1="27.94" x2="220.98" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="220.98" y="27.94" grouprefs="ATMEGA328"/>
 <pinref part="SUPPLY13" gate="GND" pin="GND"/>
-<wire x1="218.44" y1="38.1" x2="218.44" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="220.98" y1="22.86" x2="220.98" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="LM_FEEDBACK" class="0">
@@ -16340,25 +16334,25 @@ naming: grid - package width</description>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="45.72" y1="17.78" x2="50.8" y2="17.78" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<wire x1="50.8" y1="17.78" x2="50.8" y2="12.7" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="38.1" y1="17.78" x2="43.18" y2="17.78" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="43.18" y1="17.78" x2="43.18" y2="12.7" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
 <pinref part="IC2" gate="G$1" pin="+IN"/>
-<wire x1="50.8" y1="17.78" x2="66.04" y2="17.78" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<junction x="50.8" y="17.78" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="43.18" y1="17.78" x2="58.42" y2="17.78" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<junction x="43.18" y="17.78" grouprefs="LM2576_FEEDBACK"/>
 </segment>
 </net>
 <net name="PWM" class="0">
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
-<wire x1="35.56" y1="17.78" x2="33.02" y2="17.78" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<label x="33.02" y="17.78" size="2.1844" layer="95" font="vector" rot="R180" xref="yes" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="27.94" y1="17.78" x2="25.4" y2="17.78" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<label x="25.4" y="17.78" size="2.1844" layer="95" font="vector" rot="R180" xref="yes" grouprefs="LM2576_FEEDBACK"/>
 </segment>
 <segment>
 <pinref part="U1" gate="U1" pin="PD3(INT1)"/>
-<label x="317.5" y="50.8" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
-<wire x1="307.34" y1="45.72" x2="314.96" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="314.96" y1="45.72" x2="314.96" y2="50.8" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="314.96" y1="50.8" x2="317.5" y2="50.8" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="320.04" y="35.56" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="30.48" x2="317.5" y2="30.48" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="317.5" y1="30.48" x2="317.5" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="317.5" y1="35.56" x2="320.04" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="PV_VOLT" class="0">
@@ -16372,10 +16366,10 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U1" gate="U1" pin="PC1(ADC1)"/>
-<wire x1="307.34" y1="73.66" x2="312.42" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="312.42" y1="73.66" x2="312.42" y2="93.98" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="312.42" y1="93.98" x2="317.5" y2="93.98" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="317.5" y="93.98" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="58.42" x2="314.96" y2="58.42" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="314.96" y1="58.42" x2="314.96" y2="78.74" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="314.96" y1="78.74" x2="320.04" y2="78.74" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="320.04" y="78.74" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="BAT_VOLT" class="0">
@@ -16390,10 +16384,10 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U1" gate="U1" pin="PC0(ADC0)"/>
-<wire x1="307.34" y1="76.2" x2="309.88" y2="76.2" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="309.88" y1="76.2" x2="309.88" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="309.88" y1="99.06" x2="317.5" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="317.5" y="99.06" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="60.96" x2="312.42" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="312.42" y1="60.96" x2="312.42" y2="83.82" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="312.42" y1="83.82" x2="320.04" y2="83.82" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="320.04" y="83.82" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="BAT+" class="0">
@@ -16421,11 +16415,11 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="137.16" y1="22.86" x2="127" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<wire x1="127" y1="22.86" x2="127" y2="17.78" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<junction x="127" y="22.86" grouprefs="5V_REGULATOR"/>
-<wire x1="127" y1="22.86" x2="119.38" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
-<label x="119.38" y="22.86" size="2.1844" layer="95" font="vector" rot="R180" xref="yes" grouprefs="5V_REGULATOR"/>
+<wire x1="134.62" y1="22.86" x2="124.46" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="124.46" y1="22.86" x2="124.46" y2="17.78" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<junction x="124.46" y="22.86" grouprefs="5V_REGULATOR"/>
+<wire x1="124.46" y1="22.86" x2="116.84" y2="22.86" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<label x="116.84" y="22.86" size="2.1844" layer="95" font="vector" rot="R180" xref="yes" grouprefs="5V_REGULATOR"/>
 <pinref part="IC3" gate="G$1" pin="IN"/>
 </segment>
 </net>
@@ -16448,9 +16442,9 @@ naming: grid - package width</description>
 <net name="N$4" class="0">
 <segment>
 <pinref part="LED1" gate="G$1" pin="C"/>
-<wire x1="185.42" y1="10.16" x2="185.42" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="182.88" y1="10.16" x2="182.88" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
 <pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="185.42" y1="0" x2="180.34" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
+<wire x1="182.88" y1="0" x2="177.8" y2="0" width="0.1524" layer="91" grouprefs="5V_REGULATOR"/>
 </segment>
 </net>
 <net name="FDBK" class="0">
@@ -16461,15 +16455,15 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="-IN"/>
-<wire x1="66.04" y1="12.7" x2="63.5" y2="12.7" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<wire x1="63.5" y1="12.7" x2="63.5" y2="5.08" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<wire x1="63.5" y1="5.08" x2="88.9" y2="5.08" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<wire x1="88.9" y1="5.08" x2="88.9" y2="15.24" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="58.42" y1="12.7" x2="55.88" y2="12.7" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="55.88" y1="12.7" x2="55.88" y2="5.08" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="55.88" y1="5.08" x2="81.28" y2="5.08" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="81.28" y1="5.08" x2="81.28" y2="15.24" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
 <pinref part="IC2" gate="G$1" pin="OUT"/>
-<wire x1="88.9" y1="15.24" x2="81.28" y2="15.24" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<wire x1="88.9" y1="15.24" x2="91.44" y2="15.24" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
-<junction x="88.9" y="15.24" grouprefs="LM2576_FEEDBACK"/>
-<label x="91.44" y="15.24" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="81.28" y1="15.24" x2="73.66" y2="15.24" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<wire x1="81.28" y1="15.24" x2="83.82" y2="15.24" width="0.1524" layer="91" grouprefs="LM2576_FEEDBACK"/>
+<junction x="81.28" y="15.24" grouprefs="LM2576_FEEDBACK"/>
+<label x="83.82" y="15.24" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="LM2576_FEEDBACK"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -16490,136 +16484,139 @@ naming: grid - package width</description>
 </segment>
 <segment>
 <pinref part="U1" gate="U1" pin="PC2(ADC2)"/>
-<wire x1="307.34" y1="71.12" x2="314.96" y2="71.12" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="314.96" y1="71.12" x2="314.96" y2="88.9" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="314.96" y1="88.9" x2="317.5" y2="88.9" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="317.5" y="88.9" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="55.88" x2="317.5" y2="55.88" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="317.5" y1="55.88" x2="317.5" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="317.5" y1="73.66" x2="320.04" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="320.04" y="73.66" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
 <pinref part="Y1" gate="G$1" pin="2"/>
-<wire x1="251.46" y1="50.8" x2="251.46" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="254" y1="35.56" x2="254" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="C6" gate="G$1" pin="2"/>
-<wire x1="251.46" y1="53.34" x2="246.38" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="254" y1="38.1" x2="248.92" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="U1" gate="U1" pin="PB6(XTAL1/TOSC1)"/>
-<wire x1="264.16" y1="50.8" x2="261.62" y2="50.8" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="261.62" y1="50.8" x2="261.62" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="261.62" y1="53.34" x2="251.46" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="251.46" y="53.34" grouprefs="ATMEGA328"/>
+<wire x1="266.7" y1="35.56" x2="264.16" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="264.16" y1="35.56" x2="264.16" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="264.16" y1="38.1" x2="254" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="254" y="38.1" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
 <pinref part="C7" gate="G$1" pin="2"/>
-<wire x1="246.38" y1="43.18" x2="251.46" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="248.92" y1="27.94" x2="254" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="Y1" gate="G$1" pin="1"/>
-<wire x1="251.46" y1="45.72" x2="251.46" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="254" y1="30.48" x2="254" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="U1" gate="U1" pin="PB7(XTAL2/TOSC2)"/>
-<wire x1="264.16" y1="45.72" x2="261.62" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="261.62" y1="45.72" x2="261.62" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="261.62" y1="43.18" x2="251.46" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="251.46" y="43.18" grouprefs="ATMEGA328"/>
+<wire x1="266.7" y1="30.48" x2="264.16" y2="30.48" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="264.16" y1="30.48" x2="264.16" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="264.16" y1="27.94" x2="254" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="254" y="27.94" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="U1" gate="U1" pin="AREF"/>
 <pinref part="C8" gate="G$1" pin="2"/>
-<wire x1="264.16" y1="60.96" x2="228.6" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="228.6" y1="60.96" x2="228.6" y2="55.88" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="266.7" y1="45.72" x2="231.14" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="231.14" y1="45.72" x2="231.14" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="RESET" class="0">
 <segment>
 <pinref part="U1" gate="U1" pin="PC6(/RESET)"/>
-<wire x1="264.16" y1="76.2" x2="238.76" y2="76.2" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="266.7" y1="60.96" x2="256.54" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="R12" gate="G$1" pin="2"/>
-<wire x1="241.3" y1="88.9" x2="238.76" y2="88.9" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="238.76" y1="88.9" x2="238.76" y2="81.28" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="259.08" y1="73.66" x2="256.54" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="256.54" y1="73.66" x2="256.54" y2="66.04" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="S1" gate="1" pin="S"/>
 <pinref part="S1" gate="1" pin="S1"/>
-<wire x1="238.76" y1="81.28" x2="238.76" y2="76.2" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="233.68" y1="88.9" x2="233.68" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="238.76" y1="88.9" x2="233.68" y2="88.9" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="238.76" y="88.9" grouprefs="ATMEGA328"/>
-<junction x="233.68" y="88.9" grouprefs="ATMEGA328"/>
-<label x="233.68" y="81.28" size="2.1844" layer="95" font="vector" rot="R180" xref="yes" grouprefs="ATMEGA328"/>
-<wire x1="238.76" y1="81.28" x2="233.68" y2="81.28" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="238.76" y="81.28" grouprefs="ATMEGA328"/>
+<wire x1="256.54" y1="66.04" x2="256.54" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="251.46" y1="73.66" x2="251.46" y2="76.2" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="256.54" y1="73.66" x2="251.46" y2="73.66" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="256.54" y="73.66" grouprefs="ATMEGA328"/>
+<junction x="251.46" y="73.66" grouprefs="ATMEGA328"/>
+<label x="254" y="66.04" size="2.1844" layer="95" font="vector" rot="R180" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="256.54" y1="66.04" x2="254" y2="66.04" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="256.54" y="66.04" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="X3" gate="G$1" pin="1"/>
-<wire x1="276.86" y1="91.44" x2="279.4" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="279.4" y1="91.44" x2="279.4" y2="86.36" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="279.4" y1="86.36" x2="284.48" y2="86.36" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="284.48" y="86.36" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="289.56" y1="91.44" x2="292.1" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="292.1" y1="91.44" x2="292.1" y2="86.36" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="292.1" y1="86.36" x2="297.18" y2="86.36" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="297.18" y="86.36" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="TXD" class="0">
 <segment>
 <pinref part="U1" gate="U1" pin="PD1(TXD)"/>
-<wire x1="307.34" y1="50.8" x2="312.42" y2="50.8" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="312.42" y1="50.8" x2="312.42" y2="55.88" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="312.42" y1="55.88" x2="317.5" y2="55.88" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="317.5" y="55.88" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="35.56" x2="314.96" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="314.96" y1="35.56" x2="314.96" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="314.96" y1="40.64" x2="320.04" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="320.04" y="40.64" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="X3" gate="G$1" pin="2"/>
-<wire x1="276.86" y1="93.98" x2="281.94" y2="93.98" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="281.94" y1="93.98" x2="281.94" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="281.94" y1="91.44" x2="284.48" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="284.48" y="91.44" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="289.56" y1="93.98" x2="294.64" y2="93.98" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="294.64" y1="93.98" x2="294.64" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="294.64" y1="91.44" x2="297.18" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="297.18" y="91.44" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="RXD" class="0">
 <segment>
 <pinref part="U1" gate="U1" pin="PD0(RXD)"/>
-<wire x1="307.34" y1="53.34" x2="309.88" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="309.88" y1="53.34" x2="309.88" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="309.88" y1="60.96" x2="317.5" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="317.5" y="60.96" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="38.1" x2="312.42" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="312.42" y1="38.1" x2="312.42" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="312.42" y1="45.72" x2="320.04" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="320.04" y="45.72" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="X3" gate="G$1" pin="3"/>
-<wire x1="276.86" y1="96.52" x2="284.48" y2="96.52" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="284.48" y="96.52" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="289.56" y1="96.52" x2="297.18" y2="96.52" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="297.18" y="96.52" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="R11" gate="G$1" pin="2"/>
+<pinref part="U1" gate="U1" pin="PB0(ICP)"/>
+<wire x1="325.12" y1="15.24" x2="309.88" y2="15.24" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
 <pinref part="U1" gate="U1" pin="PB1(OC1A)"/>
-<wire x1="307.34" y1="27.94" x2="312.42" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="312.42" y1="27.94" x2="312.42" y2="15.24" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="12.7" x2="314.96" y2="12.7" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="314.96" y1="12.7" x2="314.96" y2="10.16" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
 <pinref part="R10" gate="G$1" pin="1"/>
-<wire x1="322.58" y1="15.24" x2="327.66" y2="15.24" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="325.12" y1="10.16" x2="330.2" y2="10.16" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="LED2" gate="G$1" pin="A"/>
-<wire x1="327.66" y1="15.24" x2="327.66" y2="10.16" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="330.2" y1="10.16" x2="330.2" y2="5.08" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="N$14" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="1"/>
 <pinref part="SG1" gate="G$1" pin="1"/>
-<wire x1="332.74" y1="20.32" x2="337.82" y2="20.32" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="337.82" y1="20.32" x2="337.82" y2="10.16" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="335.28" y1="15.24" x2="340.36" y2="15.24" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="340.36" y1="15.24" x2="340.36" y2="10.16" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="BT_TXD" class="0">
 <segment>
 <pinref part="X2" gate="G$1" pin="3"/>
-<wire x1="345.44" y1="27.94" x2="345.44" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="22.86" x2="340.36" y2="22.86" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="340.36" y1="22.86" x2="340.36" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="U1" gate="U1" pin="PD6(AIN0)"/>
-<wire x1="307.34" y1="38.1" x2="312.42" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="312.42" y1="38.1" x2="312.42" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="312.42" y1="35.56" x2="327.66" y2="35.56" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="327.66" y1="35.56" x2="327.66" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="327.66" y1="27.94" x2="345.44" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -16645,71 +16642,61 @@ naming: grid - package width</description>
 <net name="N$18" class="0">
 <segment>
 <pinref part="X2" gate="G$1" pin="5"/>
-<wire x1="350.52" y1="45.72" x2="350.52" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="345.44" y1="40.64" x2="345.44" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="JP4" gate="A" pin="2"/>
-<wire x1="350.52" y1="43.18" x2="360.68" y2="43.18" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="360.68" y1="43.18" x2="360.68" y2="50.8" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="345.44" y1="38.1" x2="355.6" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="355.6" y1="38.1" x2="355.6" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="DEV1" class="0">
 <segment>
 <pinref part="U1" gate="U1" pin="PC3(ADC3)"/>
-<wire x1="307.34" y1="68.58" x2="317.5" y2="68.58" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="317.5" y1="68.58" x2="317.5" y2="81.28" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="317.5" y1="81.28" x2="320.04" y2="81.28" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="320.04" y="81.28" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="53.34" x2="320.04" y2="53.34" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="320.04" y1="53.34" x2="320.04" y2="66.04" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="320.04" y1="66.04" x2="322.58" y2="66.04" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="322.58" y="66.04" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="JP5" gate="G$1" pin="2"/>
-<wire x1="213.36" y1="7.62" x2="218.44" y2="7.62" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="218.44" y1="7.62" x2="218.44" y2="5.08" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="218.44" y1="5.08" x2="220.98" y2="5.08" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="220.98" y="5.08" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="233.68" y1="99.06" x2="238.76" y2="99.06" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="238.76" y1="99.06" x2="238.76" y2="96.52" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="238.76" y1="96.52" x2="241.3" y2="96.52" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="241.3" y="96.52" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="DEV0" class="0">
 <segment>
 <pinref part="U1" gate="U1" pin="PC4(ADC4/SDA)"/>
-<wire x1="307.34" y1="66.04" x2="320.04" y2="66.04" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="320.04" y1="66.04" x2="320.04" y2="76.2" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="320.04" y="76.2" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="50.8" x2="322.58" y2="50.8" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="322.58" y1="50.8" x2="322.58" y2="60.96" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="322.58" y="60.96" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 <segment>
 <pinref part="JP5" gate="G$1" pin="1"/>
-<wire x1="213.36" y1="5.08" x2="215.9" y2="5.08" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="215.9" y1="5.08" x2="215.9" y2="0" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="215.9" y1="0" x2="220.98" y2="0" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<label x="220.98" y="0" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
+<wire x1="233.68" y1="96.52" x2="236.22" y2="96.52" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="236.22" y1="96.52" x2="236.22" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="236.22" y1="91.44" x2="241.3" y2="91.44" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<label x="241.3" y="91.44" size="2.1844" layer="95" font="vector" xref="yes" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
 <pinref part="X2" gate="G$1" pin="2"/>
-<wire x1="342.9" y1="33.02" x2="342.9" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<pinref part="R14" gate="G$1" pin="2"/>
-<wire x1="342.9" y1="38.1" x2="342.9" y2="45.72" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="342.9" y1="33.02" x2="347.98" y2="33.02" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="R13" gate="G$1" pin="1"/>
-<wire x1="337.82" y1="38.1" x2="342.9" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<junction x="342.9" y="38.1" grouprefs="ATMEGA328"/>
+<wire x1="332.74" y1="27.94" x2="337.82" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="337.82" y1="27.94" x2="337.82" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<pinref part="R14" gate="G$1" pin="2"/>
+<wire x1="337.82" y1="27.94" x2="342.9" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<junction x="337.82" y="27.94" grouprefs="ATMEGA328"/>
 </segment>
 </net>
-<net name="N$8" class="0">
+<net name="N$19" class="0">
 <segment>
-<pinref part="U1" gate="U1" pin="PB0(ICP)"/>
-<wire x1="307.34" y1="30.48" x2="314.96" y2="30.48" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="314.96" y1="30.48" x2="314.96" y2="20.32" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<pinref part="R11" gate="G$1" pin="2"/>
-<wire x1="314.96" y1="20.32" x2="322.58" y2="20.32" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-</segment>
-</net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="R13" gate="G$1" pin="2"/>
-<wire x1="327.66" y1="38.1" x2="314.96" y2="38.1" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 <pinref part="U1" gate="U1" pin="PD5(T1)"/>
-<wire x1="314.96" y1="38.1" x2="314.96" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
-<wire x1="314.96" y1="40.64" x2="307.34" y2="40.64" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="309.88" y1="25.4" x2="312.42" y2="25.4" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<wire x1="312.42" y1="25.4" x2="312.42" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="312.42" y1="27.94" x2="322.58" y2="27.94" width="0.1524" layer="91" grouprefs="ATMEGA328"/>
 </segment>
 </net>
 </nets>
