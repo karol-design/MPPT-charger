@@ -124,14 +124,13 @@ void loop() {
 /* -------------------------------------------------------------------------------------------------------------- */
 /* Function that measure average of n readings from the input_pin and returns value in mV. Execution time:~5*n ms */
 int measureAverage(int input_pin, int n, int V_div_R1, int V_div_R2){
-  int readings_avr_mV, Vin_avr_mV, readings_sum = 0;
+  unsigned long readings_avr_mV, Vin_avr_mV, readings_sum = 0UL;
   for(int i = 0; i < n; i++){ //Take n measurements
     readings_sum += analogRead(input_pin); //Add a 10-bit (0-1024) value read to readings_sum
-    delay(5); //Atmega328 takes ~0.1 ms to read an analog val. Wait 5 ms between readings for better performance 
+    delay(20); //Atmega328 takes ~0.1 ms to read an analog val. Wait 5 ms between readings for better performance 
   }
   readings_avr_mV = map((readings_sum / n), 0, 1024, 0, Vin_mV);
-  Vin_avr_mV = (readings_avr_mV *(V_div_R1 + V_div_R2))/(V_div_R2);
-  
+  Vin_avr_mV = (readings_avr_mV *((long)V_div_R1 + V_div_R2))/(V_div_R2);
   return Vin_avr_mV; //Return the average of n readings in mV
 }
 
