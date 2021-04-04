@@ -1,19 +1,25 @@
-1) Czujnik prądu prawdopodobnie nie działa (pobiera >100mA) po tym, jak złącze zasilania +5V zostało przypadkowo połączone z wyjściem 16V;
+1) Zamówić: czujnik natężenia prądu, moduł bluetooth, moduł DAC, wzmacniacz operacyjny, kondensatory 470 uF & 100nF,
 
-2) Wymienić kondensator na wejściu LM2576 na 470uF (25V)
+2) Zmiany i uwagi dotyczące płytki prototypowej:
+	- Podłączyć C10, C11, C12 (100nF ceramic decoupling cap );
+	- Dodać R13 i R14;
+	- Wymienić C2 na 470 uF (min 25V);
+	- Podłączyć czujnik natężenia, moduł bluetooth;
 
-3) Dodać decoupling capacitors do układu Atmegi (100nF ceramic capacitor for high-frequency noise smoothing);
-
-4) Dodać LM_ENABLE pin podłączony do Atmegi328 na schemacie
-
-Przetestować układ sprzężenia zwrotnego:
-1) Sprawdzić jak układ działa, kiedy jest podłączony do LM2576 ale podawane napięcia oscylują między 1-3V. Czy wzmiacniacz operacyjny zmienia napięcie wyjściowe?
-2) Sprawdzić jak zachowuje się Arduino z filtrem RC w roli DAC - czy napięcie również wynosi 600mV?
-3) Wypróbować inny wzmacniacz operacyjny rail-to-rail;
-4) Wypróbować zewnętrzny DAC
-5) (w razie potrzeby) Przeprojektować system Feedback.
+3) Układ sprzężenia zwrotnego:
+	1) Sprawdzić jak układ działa, kiedy jest podłączony do LM2576 ale podawane napięcia oscylują między 1-3V. Czy wzmiacniacz operacyjny zmienia napięcie wyjściowe?
+	2) Sprawdzić jak zachowuje się Arduino z filtrem RC w roli DAC - czy napięcie również wynosi 600mV?
+	3) Wypróbować inny wzmacniacz operacyjny rail-to-rail;
+	4) Wypróbować zewnętrzny DAC;
+	5) (w razie potrzeby) Przeprojektować system Feedback.
 
 
-5) Przygotować wersję programu testujące poszczególne funkcje
+4) Zapoznać się z tematyką OOP (Object Oriented Programming) i stworzyć bibliotekę do kodu Arduino w celu zwiększenia czytelności, elastyczności i uniwersalności
 
-6) Zapoznać się z tematyką OOP (Object Oriented Programming) i stworzyć bibliotekę do kodu Arduino w celu zwiększenia czytelności, elastyczności i uniwersalności
+Aktualny plan pracy:
+a) Przetestować ładowanie akumulatora z zasilacza laboratoryjnego;
+b) Przetestować ładowanie akumulatora z Panelu PV;
+c) Opracować, zaimplementować i przetestować układ sprzężenia zwrotnego;
+d) Dodać czujnik natężenia prądu;
+e) Przetestować dwufazowe ładowanie akumulatora z Panelu PV;
+f) Przetestować dwufazowe ładowanie akumulatora z Panelu PV z algorytmem MPPT;
