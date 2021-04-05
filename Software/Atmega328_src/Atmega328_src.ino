@@ -9,10 +9,10 @@
 #include <SoftwareSerial.h>
 
 /*Define time intervals for different loops */
-#define timeMain 60000UL //Time between main loop iterations (60000 ms = 1 minute)
+#define timeMain 300000UL //Time between main loop iterations (300000 ms = 5 minutes)
 
 /* MPPT algorithm parameters definition */
-#define MPPT_delay_t 1000 //Time between iterations of MPPT algorithm (1000 ms = 1 second)
+#define MPPT_delay_t 5000 //Time between iterations of MPPT algorithm (5000 ms = 5 seconds)
 
 /*Define pin allocations on Arduino board */
 #define BAT_VOLT_PIN    A0
@@ -72,8 +72,8 @@ void loop() {
 
     /* Check state of charge of the battery and decide if Bulk or Float charging mode should be executed */
     digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 for measurements
-    delay(500);
-    if(measureAverage(BAT_VOLT_PIN, 20, R5, R6) < 1300){
+    delay(4000); //Wait 
+    if((measureAverage(BAT_VOLT_PIN, 20, R5, R6) - 400) < 1300){ //Decrease measured Bat voltage by 400 mV (Bat voltage higher immediatly after charging)
       Bulk = true; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
     }else{
       Bulk = false; //Set Bulk to 0 if the Battery voltage is higher than 13.0V
