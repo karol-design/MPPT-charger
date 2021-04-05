@@ -1,0 +1,44 @@
+Initial conditions:
+Vbat = 12.81 V
+Vpv = 22.00 V (DC bench power supply)
+Vfdbk = 140 mV
+Vout = 14.63 V 
+Ipv = 80 mA
+
+__________________________
+Charging (1):
+Vbat = Vout = 13.26V
+Vpv = 22.0 V
+Vfdbk = 250 mV
+Ipv = 80 mA
+__________________________
+Charging (2):
+Vbat = Vout = 13.74V
+Vpv = 22.0 V
+Vfdbk = 200 mV
+Ipv = 200 mA
+__________________________
+Charging (3):
+Vbat = Vout = 14.31V
+Vpv = 22.0 V
+Vfdbk = 150 mV
+Ipv = 240 mA
+__________________________
+Charging (3):
+Vbat = Vout = 14.88 V
+Vpv = 22.0 V
+Vfdbk = 100 mV
+Ipv = 280 mA
+
+--- After 15 minutes ---
+Vbat = Vout = 14.86 V
+Ipv = 320 mA
+
+--- After 20 minutes ---
+Vbat = Vout = 14.85 V
+Ipv = 330 mA
+
+--- After 30 minutes ---
+Vbat = Vout = 14.81 V
+Ipv = 350 mA
+
