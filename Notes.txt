@@ -1,8 +1,6 @@
-1) Zamówić: czujnik natężenia prądu, moduł bluetooth, moduł DAC, wzmacniacz operacyjny, kondensatory 470 uF & 100nF,
+1) Zamówić: czujnik natężenia prądu, moduł bluetooth, moduł DAC, wzmacniacz operacyjny, kondensatory 470 uF & 100nF;
 
 2) Zmiany i uwagi dotyczące płytki prototypowej:
-	- Podłączyć C10, C11, C12 (100nF ceramic decoupling cap );
-	- Dodać R13 i R14;
 	- Wymienić C2 na 470 uF (min 25V);
 	- Podłączyć czujnik natężenia, moduł bluetooth;
 
