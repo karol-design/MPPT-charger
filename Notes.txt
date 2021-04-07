@@ -21,3 +21,8 @@ c) Opracować, zaimplementować i przetestować układ sprzężenia zwrotnego;
 d) Dodać czujnik natężenia prądu;
 e) Przetestować dwufazowe ładowanie akumulatora z Panelu PV;
 f) Przetestować dwufazowe ładowanie akumulatora z Panelu PV z algorytmem MPPT;
+
+Proponowany sposób podziału pracy:
+1) Zbudować pełną dwufazową ładowarkę akumulatora zasilaną zasilaczem stałonapięciowym 18V;
+2) Dodać obsługę panelu fotowoltaicznego bez MPPT;
+3) Dodać algorytm MPPT;
