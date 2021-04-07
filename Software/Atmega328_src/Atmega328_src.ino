@@ -26,14 +26,15 @@
 #define LED_PIN         9
 
 /*Fill in values below after callibration for improved precision of measurements and charger performance */
-#define Vin_mV 5050 //Atmega328 supply voltage in mV
-#define R3  5040 
-#define R4  1000
-#define R5  5090
-#define R6  982
+#define Vin_mV 5120 //Atmega328 supply voltage in mV - increased by 120 mV for more precise calculations (systematic error)
+#define R3  5020 
+#define R4  930
+#define R5  5070
+#define R6  980
 #define R8  12000
 #define R9  9000
 
+unsigned int n = 1; //Variable with current report issue
 
 void setup() {
   //Input-output pin mode definition
@@ -42,7 +43,7 @@ void setup() {
   pinMode(PV_CURRENT_PIN, INPUT);
   pinMode(PWM_PIN, OUTPUT);
   pinMode(LM_ENABLE_PIN, OUTPUT);
-  pinMode(BT_TX_PIN, OUTPUT);
+  pinMode(BT_TX_PIN, INPUT);
   pinMode(BT_RX_PIN, OUTPUT);
   pinMode(BUZZER_PIN, OUTPUT);
   pinMode(LED_PIN, OUTPUT);
@@ -50,7 +51,7 @@ void setup() {
   //Output state change to default on startup
   digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 switching buck converter by default
   digitalWrite(BUZZER_PIN, LOW); //Turn off buzzer by default
-  digitalWrite(LED_PIN, HIGH); //Turn off LED indicator by default
+  digitalWrite(LED_PIN, LOW); //Turn off LED indicator by default
   SetCharging(1300); //Set the charging voltage to 13.0 Volts by default
   
   delay(2000); //Wait 2 seconds before ending the setup for RC filter (connected to PWM) stabilisation
@@ -127,7 +128,7 @@ int measureAverage(int input_pin, int n, int V_div_R1, int V_div_R2){
   unsigned long readings_avr_mV, Vin_avr_mV, readings_sum = 0UL;
   for(int i = 0; i < n; i++){ //Take n measurements
     readings_sum += analogRead(input_pin); //Add a 10-bit (0-1024) value read to readings_sum
-    delay(20); //Atmega328 takes ~0.1 ms to read an analog val. Wait 5 ms between readings for better performance 
+    delay(5); //Atmega328 takes ~0.1 ms to read an analog val. Wait 5 ms between readings for better performance 
   }
   readings_avr_mV = map((readings_sum / n), 0, 1024, 0, Vin_mV);
   Vin_avr_mV = (readings_avr_mV *((long)V_div_R1 + V_div_R2))/(V_div_R2);
@@ -157,24 +158,30 @@ void generateReport(int BAT_voltage, int PV_voltage, int PV_current, bool Bulk, 
   SoftwareSerial serialPort(RX_PIN, TX_PIN); //Define Software serial port
   serialPort.begin(9600); //Serial port configuration (baud rate: 9600)
 
-  serialPort.print("------------------------------------------------------------------\n");
-  serialPort.print("MPPT Solar Charger with bluetooth communication | Current status: \n\nPV panel illuminated:\t\t");
-  serialPort.print(PV_voltage > 1300); //Print 1 if PV panel is illuminated by the sunlight (PV_V > 13.0V)
-  serialPort.print(" (Illuminated/Shaded)\nCurrent charging mode:\t\t");
+  serialPort.print("---------------------------------------------------------------------------------\n");
+  serialPort.print("MPPT Solar Charger with bluetooth communication\nReport on current status #");
+  serialPort.print(n/2);
+  serialPort.print("\n\n# PV panel illuminated:\t\t");
+  serialPort.print(PV_voltage > 10000); //Print 1 if PV panel is illuminated by the sunlight (PV_V > 10.0V)
+  serialPort.print(" (Illuminated/Shaded)\n# Current charging mode:\t");
   if(Bulk == 1){
-    serialPort.print("Bulk mode (MPPT algorithm on)\nBattery voltage:\t\t");
+    serialPort.print("Bulk mode (MPPT algorithm on)\n# Battery voltage:\t\t");
   }else if(Bulk == 0){
-    serialPort.print("Float mode (MPPT algorithm off)\nBattery voltage:\t\t");
+    serialPort.print("Float mode (MPPT algorithm off)\n# Battery voltage:\t\t");
   }
   serialPort.print(BAT_voltage / (float) 1000.0, 3);
-  serialPort.print(" V \nPhotovoltaic panel voltage:\t");
+  serialPort.print(" V \n# Photovoltaic panel voltage:\t");
   serialPort.print(PV_voltage / (float) 1000.0, 3);
-  serialPort.print(" V \nPhotovoltaic panel current:\t");
+  serialPort.print(" V \n# Photovoltaic panel current:\t");
   serialPort.print(PV_current / (float) 1000.0, 3);
-  serialPort.print(" A \nPower delivered by PV panel:\t");
+  serialPort.print(" A \n# Power delivered by PV panel:\t");
   serialPort.print(((PV_current * (long) PV_voltage) / 1000000.0), 3);
-  serialPort.print(" W \nBattery SOC (state of charge)\t");
+  serialPort.print(" W \n# Battery SOC (state of charge)\t");
   serialPort.print((BAT_voltage - 11820)/13);
-  serialPort.print(" % of full capacity \n\n\n");
+  serialPort.print(" % of full capacity \n\n");
+  if(bt == false){ //Additional new lines for bluetooth module if bt == true
+    serialPort.print("\n\n\n\n\n");
+  }
+  n++; //Increment current report number
   return;
 }
