@@ -1,12 +1,14 @@
 /*  Name: MPPT Solar Charger with Bluetooth communication | Source file
  *  Author: Karol Wojsław
- *  Date: 04/04/2021 (last release)
+ *  Date: 20/04/2021 (last release)
  *  Description: Code for Atmega328 microcontroller on MPPT charge controller board [...]
  *  [...] based on LM2576 switching voltage regulator
  */
 
 
 #include <SoftwareSerial.h>
+#include <Wire.h>
+#include <Adafruit_MCP4725.h>
 
 /*Define time intervals for different loops */
 #define timeMain 300000UL //Time between main loop iterations (300000 ms = 5 minutes)
@@ -26,22 +28,24 @@
 #define LED_PIN         9
 
 /*Fill in values below after callibration for improved precision of measurements and charger performance */
-#define Vin_mV 5120 //Atmega328 supply voltage in mV - increased by 120 mV for more precise calculations (systematic error)
+#define Vin_mV 5020 //Atmega328 supply voltage in mV - increased by 25 mV for more precise calculations (systematic error)
+#define Vout_float 170 //Voltage that has to be set on FDBK pin to obtain float mode output voltage (13.70 V)
+#define Vout_bulk 80 //Voltage that has to be set on FDBK pin to obtain float mode output voltage (14.65 V)
 #define R3  5020 
 #define R4  930
 #define R5  5070
 #define R6  980
-#define R8  12000
-#define R9  9000
+
+Adafruit_MCP4725 MCP4725_DAC; //Create MCP4725_DAC object
 
 unsigned int n = 1; //Variable with current report issue
+
 
 void setup() {
   //Input-output pin mode definition
   pinMode(BAT_VOLT_PIN, INPUT);
   pinMode(PV_VOLT_PIN, INPUT);
   pinMode(PV_CURRENT_PIN, INPUT);
-  pinMode(PWM_PIN, OUTPUT);
   pinMode(LM_ENABLE_PIN, OUTPUT);
   pinMode(BT_TX_PIN, INPUT);
   pinMode(BT_RX_PIN, OUTPUT);
@@ -52,9 +56,9 @@ void setup() {
   digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 switching buck converter by default
   digitalWrite(BUZZER_PIN, LOW); //Turn off buzzer by default
   digitalWrite(LED_PIN, LOW); //Turn off LED indicator by default
-  SetCharging(1300); //Set the charging voltage to 13.0 Volts by default
-  
-  delay(2000); //Wait 2 seconds before ending the setup for RC filter (connected to PWM) stabilisation
+
+  MCP4725_DAC.begin(0x60); //MCP4725 digital DAC I2C configuration (Adress: 0x60)
+  SetCharging(Vout_float); //Set the charging voltage to 13.70 V by default
 }
 
 
@@ -74,7 +78,7 @@ void loop() {
     /* Check state of charge of the battery and decide if Bulk or Float charging mode should be executed */
     digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 for measurements
     delay(4000); //Wait 
-    if((measureAverage(BAT_VOLT_PIN, 20, R5, R6) - 400) < 1300){ //Decrease measured Bat voltage by 400 mV (Bat voltage higher immediatly after charging)
+    if((measureAverage(BAT_VOLT_PIN, 20, R5, R6) - 400) < 13000){ //Decrease measured Bat voltage by 400 mV (Bat voltage higher immediatly after charging)
       Bulk = true; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
     }else{
       Bulk = false; //Set Bulk to 0 if the Battery voltage is higher than 13.0V
@@ -84,9 +88,9 @@ void loop() {
     /* ------------------------------------------------------------ */
     /* Enter bulk charging mode with MPPT algorithm on*/
     while(Bulk == 1 && timeDifference < timeMain){
-      SetCharging(MPPT_Vout); //Set the charging voltage to MPPT_val (13.0 V default)
+      SetCharging(---); //Set the charging voltage to MPPT_val (13.0 V default)
 
-      PV_current = measureAverage(PV_CURRENT_PIN, 10, 0, 1); //No voltage div, hence R1=0 & R2=1, 1mV = 1 mA
+      PV_current = (((measureAverage(PV_CURRENT_PIN, 250, 0, 1)-215)*4)/5); //No voltage div, hence R1=0 & R2=1, 1 mA = 0.8 mV
       PV_voltage = measureAverage(PV_VOLT_PIN, 20, R3, R4);
 
       Power_new = PV_current * PV_voltage;
@@ -105,7 +109,7 @@ void loop() {
     /* ------------------------------------------------------------ */
     /* Enter float-storage charging mode with MPPT algorithm off*/
     while(Bulk == 0 && timeDifference < timeMain){
-      SetCharging(1370); //Set the charging voltage to 13.7 Volts
+      SetCharging(Vout_float); //Set the charging voltage to 13.7 Volts
       currentTime = millis();
       timeDifference = currentTime - tempTime;
     }
@@ -137,11 +141,9 @@ int measureAverage(int input_pin, int n, int V_div_R1, int V_div_R2){
 
 
 /* -------------------------------------------------------------------------------------------------------------- */
-/* Function that change the charging voltage (LM2576 Vout) to a set value  */
+/* Function that change the charging voltage (LM2576 Vout) to a given value  */
 void SetCharging(unsigned long Voltage_mV){
-  unsigned long V_ref_mV = ((((R8 + R9)*(long)1235)/R8) - ((R9 * Voltage_mV)/R8));
-  unsigned long V_ref = map(V_ref_mV, 0, Vin_mV, 0, 1024); //Map value of Reference voltage in mV to 10bit value (0-1024)
-  analogWrite(PWM_PIN, V_ref); //Set reference voltage on PWM pin
+  MCP4725_DAC.setVoltage(Voltage_mV, false); //12-bit  resolution: values between 0 - 4095;  1.263mV per LSB (example for Vin 5.17 V)
   return;
 }
 
