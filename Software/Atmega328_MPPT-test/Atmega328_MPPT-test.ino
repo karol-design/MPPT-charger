@@ -2,6 +2,8 @@
  *  Author: Karol Wojsław
  *  Date: 04/04/2021 (last release)
  *  Description: For test purposes only
+ *  
+ *  Atention: Code inconsistent with the current version (look up to Atmega328_battery_charger-test)
  */
 
 

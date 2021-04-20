@@ -17,13 +17,14 @@
 #define BT_RX_PIN       6
 
 /*Fill in values below after callibration for improved precision of measurements and charger performance */
-#define Vin_mV 5120 //Atmega328 supply voltage in mV - increased by 120 mV for more precise calculations (systematic error)
+#define Vin_mV 5020 //Atmega328 supply voltage in mV - increased by 25 mV for more precise calculations (systematic error)
 #define R3  5020 
 #define R4  930
 #define R5  5070
 #define R6  980
 
 unsigned int n = 1; //Variable with current report issue
+
 
 void setup() {
   //Input-output pin mode definition
@@ -41,10 +42,10 @@ void loop() {
   bool Bulk = false;
 
   /* --------------------------------------------------------------------------- */
-  /*Measure the average of n = 1 reading from analog pins and generate reports   */
+  /*Measure the average of n = 10 reading from analog pins and generate reports   */
   BAT_voltage = measureAverage(BAT_VOLT_PIN, 10, R5, R6);
   PV_voltage = measureAverage(PV_VOLT_PIN, 10, R3, R4);
-  PV_current = (((measureAverage(PV_CURRENT_PIN, 10, 0, 1)-275)*4)/5); //No voltage div, hence R1=0 & R2=1, 1 mA = 0.8 mV
+  PV_current = (((measureAverage(PV_CURRENT_PIN, 10, 0, 1)-215)*4)/5); //No voltage div, hence R1=0 & R2=1, 1 mA = 0.8 mV
   
   generateReport(BAT_voltage, PV_voltage, PV_current, Bulk, 1); //Send report over bluetooth (bt = 1)
   generateReport(BAT_voltage, PV_voltage, PV_current, Bulk, 0); //Send report over USB serial port
