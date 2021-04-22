@@ -1,5 +1,0 @@
-Start rozładowywania baterii: 19:30 - Napięcie: 13.30 V
-Koniec rozładowywania baterii: 5:30 (10h) - Oczekiwane napięcie 12.60 V
-
-
-      

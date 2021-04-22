@@ -1,0 +1,11 @@
+1) Implement a code that would prevent oscillations between Bulk and Float mode (e.g. 10 minutes main loop instead of 1 minute + more accurate BatVoltage measurement that takes into account charging current (low charging current - small voltage subtracted / high charging current - big voltage subtracted)
+
+2) Review and improve setChargingVoltage function (FDBK voltage needed for Float/Bulk mode depends on the current SOC of the battery);
+
+3) Improve BatVoltage measurement (!) and also PVCurrent;
+
+4) Add at least 3 different modes:
+	- PV on; Bulk on;
+	- PV on; Bulk off;
+	- PV off;
+
