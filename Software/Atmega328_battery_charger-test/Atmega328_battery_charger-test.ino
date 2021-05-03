@@ -11,9 +11,6 @@
 #include <Wire.h>
 #include <Adafruit_MCP4725.h>
 
-/*Define time intervals for different loops */
-#define timeMain 600000UL //Time between main loop iterations (600000 ms = 600 seconds)
-
 /*Define pin allocations on Arduino board */
 #define BAT_VOLT_PIN    A0
 #define PV_VOLT_PIN     A1
@@ -34,6 +31,9 @@
 Adafruit_MCP4725 MCP4725_DAC; //Create MCP4725_DAC object
 
 unsigned int n = 1; //Variable with current report issue
+
+/*Define time intervals for different loops */
+const unsigned long timeMain = 600000; //Time between main loop iterations (600000 ms = 600 seconds)
 
 
 void setup(){
@@ -73,9 +73,9 @@ void loop(){
   delay(1000); //Wait 1 second before the measurement
   BAT_voltage = measureAverage(BAT_VOLT_PIN, 100, R5, R6); //Measure battery voltage
   if(BAT_voltage < 13200){
-    Bulk = true; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
+    Bulk = true; //Set Bulk to 1 if the Battery voltage is lower than 13.2V
   }else{
-    Bulk = false; //Set Bulk to 0 if the Battery voltage is higher than 13.0V
+    Bulk = false; //Set Bulk to 0 if the Battery voltage is higher than 13.2V
   }
 
   PV_voltage = measureAverage(PV_VOLT_PIN, 100, R3, R4);
@@ -119,12 +119,18 @@ void loop(){
     
     /* Check state of charge of the battery and decide if Bulk or Float charging mode should be executed */
     digitalWrite(LM_ENABLE_PIN, HIGH); //Turn off LM2576 for measurements
-    delay(10000); //Wait 10 seconds before the measurement
-    BAT_voltage = measureAverage(BAT_VOLT_PIN, 100, R5, R6) - V_ChargingDrop; //Decrease measured V_ChargingDrop (Bat voltage higher immediatly after charging)
-    if(BAT_voltage < 13000){
-      Bulk = true; //Set Bulk to 1 if the Battery voltage is lower than 13.0V
+
+    if(Bulk){
+      delay(30000); //Wait 30 seconds before the measurement if the last mode was Bulk
     }else{
-      Bulk = false; //Set Bulk to 0 if the Battery voltage is higher than 13.0V
+      delay(5000); //Wait 5 seconds before the measurement if the last mode was Float
+    }
+    
+    BAT_voltage = measureAverage(BAT_VOLT_PIN, 100, R5, R6) - V_ChargingDrop; //Decrease measured V_ChargingDrop (Bat voltage higher immediatly after charging)
+    if(BAT_voltage < 13100){
+      Bulk = true; //Set Bulk to 1 if the Battery voltage is lower than 13.1V
+    }else{
+      Bulk = false; //Set Bulk to 0 if the Battery voltage is higher than 13.1V
     }
 
     generateReport(CHA_voltage, BAT_voltage, PV_voltage, PV_current, Bulk); //Send report over USB serial port
