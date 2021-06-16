@@ -1,6 +1,6 @@
 /*  Name: MPPT Solar Charger with Bluetooth communication | Test & callibration code (with objects)
  *  Author: Karol Wojsław
- *  Date: 08/06/2021 (last release)
+ *  Date: 16/06/2021 (last release)
  *  Description: Code for Atmega328 microcontroller on MPPT charge controller board based on LM2576 switching voltage regulator aimed to test
  *  all of the basic components of the board.
  */
@@ -14,9 +14,11 @@ Solar_charger testBoard;      // Create testBoard object
 
 /* ----------------------------------------------------- Setup function ---------------------------------------------------------- */
 void setup() {
-  Serial.println("MPPT charge controller test & callibration mode initialised!"); // Standard Serial port test
   testBoard.ledBlink();   // Built-in LED indicator test
   testBoard.buzzer();     // Built-in buzzer test
+
+  delay(1000);
+  Serial.println("MPPT charge controller | Manual battery charger"); // Standard Serial port test
 }
 
 
@@ -34,5 +36,5 @@ void loop() {
   testBoard.report(SERIAL_P, 0);
   testBoard.report(BLUETOOTH, 0);
 
-  delay(5000); // Wait 10 seconds before the next itteration of the loop
+  delay(5000); // Wait 5 seconds before the next itteration of the loop
 }

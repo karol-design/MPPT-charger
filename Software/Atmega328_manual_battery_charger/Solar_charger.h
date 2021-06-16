@@ -1,7 +1,7 @@
 /*  Name: Solar_charger.h
  *  Description: MPPT Solar Charger board with Bluetooth communication | Board library
  *  Author: Karol Wojsław
- *  Date: 08/06/2021 (last release)
+ *  Date: 16/06/2021 (last release)
  */
 
 #ifndef Solar_charger_h

@@ -1,7 +1,7 @@
 /*  Name: Solar_charger.cpp
  *  Description: MPPT Solar Charger board with Bluetooth communication | Board library
  *  Author: Karol Wojsław
- *  Date: 08/06/2021 (last release)
+ *  Date: 16/06/2021 (last release)
  */
 
 #include <Adafruit_MCP4725.h> // Current sensor library
@@ -87,9 +87,9 @@ void Solar_charger::ledBlink() {
 /* Method that turn on and off the buzzer on the board three times */
 void Solar_charger::buzzer() {
   tone(BUZZER_PIN, 1000, 250); 
-  delay(200);
+  delay(100);
   tone(BUZZER_PIN, 1000, 250);
-  delay(200);
+  delay(100);
   tone(BUZZER_PIN, 1500, 250);
 }
 
@@ -106,7 +106,7 @@ void Solar_charger::report(int serialPort, bool Bulk) {
   SoftwareSerial btModule(BT_TX_PIN, BT_RX_PIN);  // Create SoftwareSerial object and define Software serial port
 
   btModule.begin(9600);       // Software Serial port configuration (baud rate: 9600)
-  Serial.begin(115200);         // Serial port configuration (baud rate: 9600)
+  Serial.begin(9600);         // Serial port configuration (baud rate: 9600)
 
   unsigned long _BAT_voltage = Solar_charger::get(BAT_VOLTAGE);  // Calculate Battery voltage
   unsigned long _PV_voltage = Solar_charger::get(PV_VOLTAGE);    // Calculate PV panel voltage
