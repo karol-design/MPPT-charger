@@ -62,12 +62,35 @@ int Solar_charger::get(int command) {
 
 /* ----------------------------------------------------------------------- */
 /* Method that change the charging voltage (LM2576 Vout) to a given value  */
-void Solar_charger::setCharging(unsigned long Voltage_mV) {
+void Solar_charger::setCharging(float Voltage_V) {
   Adafruit_MCP4725 MCP4725_DAC;       // Create MCP4725_DAC object
   MCP4725_DAC.begin(0x60);            // MCP4725 digital DAC I2C configuration (Adress: 0x60)
   delay(200);
 
-  MCP4725_DAC.setVoltage(Voltage_mV, false); //12-bit  resolution: values between 0 - 4095;  1.263mV per LSB (example for Vin 5.17 V)
+  // Set the feedback (and hence the output) voltage according to the theoretical equation
+  int Vbat_current_mV, Vbat_desired_mV_corrected, Vbat_desired_mV = (int) (1000 * Voltage_V), error_correction;
+  Vbat_desired_mV_corrected = Vbat_desired_mV;
+  int Vfdbk_MC4725_mV = (((((float) (R6+R7) / R7) * 1.235 - Vbat_desired_mV) * R7) / R6);
+  long int fdbk_MC4725 = map(Vfdbk_MC4725_mV, 0, Vin_mV, 0, 4095); 
+  MCP4725_DAC.setVoltage(fdbk_MC4725, false); //12-bit  resolution: values between 0 - 4095;
+
+  delay(500);
+  Vbat_current_mV = Solar_charger::get(BAT_VOLTAGE);
+  int error = Vbat_desired_mV - Vbat_current_mV;
+
+  for(int i = 0; i < 10; i++) {
+    while(MOD(error) > 25) {  // If the error is greater than 25 mV try to minimise it using P(ID) controller. Max 10 itterations. 
+      error_correction = error / 2;
+      Vbat_desired_mV_corrected += error; // Add/subtract error correction to Vbat desired
+      Vfdbk_MC4725_mV = (((((float) (R6+R7) / R7) * 1.235 - Vbat_desired_mV_corrected) * R7) / R6);
+      fdbk_MC4725 = map(Vfdbk_MC4725_mV, 0, Vin_mV, 0, 4095); 
+      MCP4725_DAC.setVoltage(fdbk_MC4725, false); //12-bit  resolution: values between 0 - 4095;
+      delay(500);
+
+      Vbat_current_mV = Solar_charger::get(BAT_VOLTAGE);
+      error = Vbat_desired_mV - Vbat_current_mV;
+    }
+  }
 }
 
 

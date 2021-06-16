@@ -39,6 +39,8 @@
 #define R3  976           // R2 resistance in Ohms
 #define R4  4790          // R4 resistance in Ohms
 #define R5  976           // R5 resistance in Ohms
+#define R6  16299         // R6 resistance in Ohms
+#define R7  976           // R7 resistance in Ohms
 
 class Solar_charger {
   public:
