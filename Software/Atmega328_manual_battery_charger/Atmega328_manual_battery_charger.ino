@@ -19,6 +19,7 @@ void setup() {
   testBoard.ledBlink();       // Built-in LED indicator test
   testBoard.buzzer();         // Built-in buzzer test
   testBoard.LM2576(LM_state); // LM2576 switching regulator enable test
+  testBoard.setCharging(13.7);// Set charging voltage to 13.70 V at startup
 
   delay(1000);
   Serial.println("MPPT charge controller | Manual battery charger"); // Standard Serial port test
@@ -42,11 +43,17 @@ void loop() {
         waiting = false;
       } else if(ch_read == 'V') {
         float voltage = Serial.parseFloat();
-        Serial.print("\nChanging voltage to ");
+        Serial.print("\nOutput (BAT) voltage = ");
         Serial.print(voltage, 2);
         Serial.println(" V");
 
         testBoard.setCharging(voltage);
+        Serial.print("Input (PV) voltage = ");
+        Serial.print((testBoard.get(PV_VOLTAGE) / 1000.0), 2);
+        Serial.println(" V");
+        Serial.print("Input (PV) current = ");
+        Serial.print(((((testBoard.get(PV_CURRENT)-PV_cur_Vofset)*5)/4) / 1000.0), 2);
+        Serial.println(" A");
         waiting = false;
       } else if(ch_read == 'L') {
         LM_state = !LM_state;

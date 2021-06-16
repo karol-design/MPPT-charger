@@ -72,34 +72,36 @@ void Solar_charger::setCharging(float Voltage_V) {
   int error, error_correction, Vbat_desired_mV_corrected = Vbat_desired_mV;
 
   Vfdbk_MC4725_mV = (1309 - (int) ((float) Vbat_desired_mV * 0.05988)); // Calculate theoretical value of fdbk in mV
-  Serial.print("Feedback voltage = ");
-  Serial.println(Vfdbk_MC4725_mV);
+  // Serial.print("Feedback voltage = ");
+  // Serial.println(Vfdbk_MC4725_mV);
   fdbk_MC4725 = map(Vfdbk_MC4725_mV, 0, Vin_mV, 0, 4095); // Map the value to 12 bit int (12-bit  resolution: values between 0 - 4095)
-  Serial.print("MC4725 12-bit value = ");
-  Serial.println(fdbk_MC4725);
+  // Serial.print("MC4725 12-bit value = ");
+  // Serial.println(fdbk_MC4725);
   MCP4725_DAC.setVoltage(fdbk_MC4725, false); // Send the value to the MCP4725 digital DAC
 
   delay(500); // Wait for the voltage to stabilise
   Vbat_current_mV = Solar_charger::get(BAT_VOLTAGE);  // Read current output voltage
   error = Vbat_desired_mV - Vbat_current_mV;          // Calculate error
-  Serial.print("Error = ");
-  Serial.println(error);
+  // Serial.print("Error = ");
+  // Serial.println(error);
 
-  for(int i = 0; i < 10; i++) {
-    if(MOD(error) > 10) {  // If the error is greater than 25 mV try to minimise it using P(ID) controller. Max 10 itterations. 
+  for(int i = 0; i < 5; i++) {
+    if(MOD(error) > 15) {  // If the error is greater than 15 mV try to minimise it using P(ID) controller. Max 5 itterations. 
       error_correction = error / 2;
-      Serial.print("Error correction = ");
-      Serial.println(error_correction);
+      // Serial.print("Error correction = ");
+      // Serial.println(error_correction);
       Vbat_desired_mV_corrected += error; // Add/subtract error correction to Vbat desired
-      Vfdbk_MC4725_mV = (1309 - (int) ((float) Vbat_desired_mV_corrected * 0.05988)); // Calculate theoretical value of fdbk in mV
-      fdbk_MC4725 = map(Vfdbk_MC4725_mV, 0, Vin_mV, 0, 4095); 
-      MCP4725_DAC.setVoltage(fdbk_MC4725, false); //12-bit  resolution: values between 0 - 4095;
+      if(Vbat_desired_mV_corrected > 6000) { // Protect the board from seting the voltage below 6 V and cutting off MCU power
+        Vfdbk_MC4725_mV = (1309 - (int) ((float) Vbat_desired_mV_corrected * 0.05988)); // Calculate theoretical value of fdbk in mV
+        fdbk_MC4725 = map(Vfdbk_MC4725_mV, 0, Vin_mV, 0, 4095); 
+        MCP4725_DAC.setVoltage(fdbk_MC4725, false); //12-bit  resolution: values between 0 - 4095;
+      }
       delay(500);
 
       Vbat_current_mV = Solar_charger::get(BAT_VOLTAGE);
       error = Vbat_desired_mV - Vbat_current_mV;
-      Serial.print("Error = ");
-      Serial.println(error);
+      // Serial.print("Error = ");
+      // Serial.println(error);
     }
   }
 }
