@@ -106,7 +106,7 @@ void Solar_charger::report(int serialPort, bool Bulk) {
   SoftwareSerial btModule(BT_TX_PIN, BT_RX_PIN);  // Create SoftwareSerial object and define Software serial port
 
   btModule.begin(9600);       // Software Serial port configuration (baud rate: 9600)
-  Serial.begin(115200);       // Serial port configuration (baud rate: 9600)
+  Serial.begin(115200);         // Serial port configuration (baud rate: 9600)
 
   unsigned long _BAT_voltage = Solar_charger::get(BAT_VOLTAGE);  // Calculate Battery voltage
   unsigned long _PV_voltage = Solar_charger::get(PV_VOLTAGE);    // Calculate PV panel voltage

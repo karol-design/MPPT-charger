@@ -28,10 +28,6 @@
 #define ON  0 // LM2576 is on when the OFF pin is grounded
 #define OFF 1 // LM2576 is turned off when the OFF pin is abouve the threshold voltage
 
-/* Define Serial port numbers */
-#define SERIAL_P  0 // Send report over standard Serial Port if 0
-#define BLUETOOTH 1 // Send report over bluetooth if 1
-
 /* Fill in values below after callibration for improved precision of measurements and charger performance */
 #define Vin_mV 5090       // Atmega328 supply voltage in mV - increased by 25 mV for more precise calculations (systematic error)
 #define PV_cur_Vofset 355 // Voltage in mV to be subtracted from PV_current sensor readings (systematic error)
@@ -48,14 +44,10 @@ class Solar_charger {
     void ledBlink();
     void buzzer();
     void LM2576(int state);
-    void report(int serialPort, bool Bulk);
 
   private:
     int input_pin, V_div_R1, V_div_R2, n;
     unsigned long readings_avr_mV, Vin_avr_mV, readings_sum;
-    unsigned long _BAT_voltage, _PV_voltage, _PV_current;
-    static int n_serial, n_bluetooth; 
-    bool _Bulk;
 };
 
 #endif
