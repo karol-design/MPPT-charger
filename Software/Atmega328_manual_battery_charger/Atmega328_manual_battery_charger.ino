@@ -36,13 +36,13 @@ void loop() {
       char ch_read = Serial.read();
 
       if(ch_read == 'R') {
-        Serial.println("Generating report on the current state of the charger...");
+        Serial.println("\nGenerating report on the current state of the charger...");
         testBoard.report(SERIAL_P, 0);
         testBoard.report(BLUETOOTH, 0);
         waiting = false;
       } else if(ch_read == 'V') {
         float voltage = Serial.parseFloat();
-        Serial.print("Changing voltage to ");
+        Serial.print("\nChanging voltage to ");
         Serial.print(voltage, 2);
         Serial.println(" V");
 
@@ -51,11 +51,11 @@ void loop() {
       } else if(ch_read == 'L') {
         LM_state = !LM_state;
         testBoard.LM2576(LM_state);
-        Serial.print("LM2576 state changed to: ");
+        Serial.print("\nLM2576 state changed to: ");
         Serial.println(LM_state);
         waiting = false;
       } else if(ch_read == 'B') {
-        Serial.println("Disabling LM2576... ");
+        Serial.println("\nDisabling LM2576... ");
         if(LM_state == ON) {
           LM_state == OFF;
         }
@@ -68,7 +68,7 @@ void loop() {
         Serial.println(" V");
         waiting = false;
       } else {
-        Serial.println("Invalid command. Try again...");
+        Serial.println("\nInvalid command. Try again...");
         waiting = false;
       }
 
