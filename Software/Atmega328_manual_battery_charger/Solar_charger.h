@@ -42,6 +42,8 @@
 #define R6  16299         // R6 resistance in Ohms
 #define R7  976           // R7 resistance in Ohms
 
+#define MOD(A) (((A) > 0) ? (A) : -(A)) // Define modulus (absolute value) directive
+
 class Solar_charger {
   public:
     Solar_charger();
