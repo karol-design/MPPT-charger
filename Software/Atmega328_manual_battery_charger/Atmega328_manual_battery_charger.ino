@@ -15,6 +15,7 @@ bool LM_state = ON;
 
 /* ----------------------------------------------------- Setup function ---------------------------------------------------------- */
 void setup() {
+  Serial.begin(9600);         // Serial port configuration (baud rate: 9600)
   testBoard.ledBlink();       // Built-in LED indicator test
   testBoard.buzzer();         // Built-in buzzer test
   testBoard.LM2576(LM_state); // LM2576 switching regulator enable test
@@ -26,67 +27,53 @@ void setup() {
 
 /* ----------------------------------------------------- Loop function ---------------------------------------------------------- */
 void loop() {
-  Serial.println("---------------------------------| Menu |---------------------------------");
+  Serial.println("\n-------------------------------| Menu |-------------------------------");
   Serial.println("\"R\" (Report), \"V 00.00\" (Vout set), \"L\" (LM ON/OFF), \"B\" (Bat state)");
+  bool waiting = true;
 
   while(waiting) {
     if(Serial.available() > 0) {
       char ch_read = Serial.read();
-      switch (ch_read) {
-        case 'R':
-          Serial.println("Generating report on the current state of the charger...");
-          testBoard.report(SERIAL_P, 0);
-          testBoard.report(BLUETOOTH, 0);
-          waiting = false;
-          break;
 
-        case 'V':
-          float voltage = Serial.parseFloat();
-          Serial.print("Changing voltage to ");
-          Serial.print(voltage, 2);
-          Serial.println(" V");
-          
-          testBoard.setCharging(voltage);
-          waiting = false;
-          break;
+      if(ch_read == 'R') {
+        Serial.println("Generating report on the current state of the charger...");
+        testBoard.report(SERIAL_P, 0);
+        testBoard.report(BLUETOOTH, 0);
+        waiting = false;
+      } else if(ch_read == 'V') {
+        float voltage = Serial.parseFloat();
+        Serial.print("Changing voltage to ");
+        Serial.print(voltage, 2);
+        Serial.println(" V");
 
-        case 'L':
-          LM_state = !LM_state;
-          testBoard.LM2576(LM_State);
-          Serial.print("LM 2576 state changed to: ");
-          Serial.println(LM_state);
-          waiting = false;
-          break;
-
-        case 'B':
-          Serial.println("Disabling LM2576... ");
-          if(LM_state == ON) {
-            LM_state == OFF;
-          }
-          testBoard.LM2576(OFF);
-          delay(2000);
-          Serial.println("Measuring battery voltage... ");
-          float BAT_voltage = (testBoard.get(BAT_VOLTAGE) / (float) 1000.0);  // Calculate Battery voltage
-          Serial.print("Current battery voltage = ");
-          Serial.print(BAT_voltage, 3);
-          Serial.println(" V");
-          waiting = false;
-          break;
-
-        default:
-          Serial.println("Invalid command. Try again...");
-          waiting = false;
-          break;
+        testBoard.setCharging(voltage);
+        waiting = false;
+      } else if(ch_read == 'L') {
+        LM_state = !LM_state;
+        testBoard.LM2576(LM_state);
+        Serial.print("LM2576 state changed to: ");
+        Serial.println(LM_state);
+        waiting = false;
+      } else if(ch_read == 'B') {
+        Serial.println("Disabling LM2576... ");
+        if(LM_state == ON) {
+          LM_state == OFF;
+        }
+        testBoard.LM2576(OFF);
+        delay(2000);
+        Serial.println("Measuring battery voltage... ");
+        float BAT_voltage = (testBoard.get(BAT_VOLTAGE) / (float) 1000.0);  // Calculate Battery voltage
+        Serial.print("Current battery voltage = ");
+        Serial.print(BAT_voltage, 3);
+        Serial.println(" V");
+        waiting = false;
+      } else {
+        Serial.println("Invalid command. Try again...");
+        waiting = false;
       }
+
+      while(Serial.read() > 0) {} // Clear Serial port buffer
     }
   }
-  
-  // Variables declaration and initialisation
-  unsigned long BAT_voltage = 0, PV_voltage = 0, PV_current = 0;
-  testBoard.setCharging(40); // Set the feedback voltage to 50 mV
-
-  PV_voltage = testBoard.get(PV_VOLTAGE);    // Calculate PV panel voltage
-  PV_current = (((testBoard.get(PV_CURRENT)-PV_cur_Vofset)*5)/4); // Calculate PV current (1 mA = 0.8 mV)
-
-  delay(5000); // Wait 5 seconds before the next itteration of the loop
+  delay(200); // Wait 0.2 second before the next itteration of the loop
 }

@@ -68,10 +68,10 @@ void Solar_charger::setCharging(float Voltage_V) {
   delay(200);                   // Wait for estabilestablishing the connection
 
   // Set the feedback (and hence the output) voltage according to the theoretically calculated fdbk value
-  int Vbat_current_mV, Vbat_desired_mV = (int) (1000 * Voltage_V), Vfdbk_MC4725_mV, fdbk_MC4725;
+  int Vbat_current_mV, Vbat_desired_mV = (int) (1000.0 * Voltage_V), Vfdbk_MC4725_mV, fdbk_MC4725;
   int error, error_correction, Vbat_desired_mV_corrected = Vbat_desired_mV;
 
-  Vfdbk_MC4725_mV = (((((float) (R6+R7) / R7) * 1.235 - Vbat_desired_mV) * R7) / R6); // Calculate theoretical value of fdbk in mV
+  Vfdbk_MC4725_mV = (1309 - (int) ((float) Vbat_desired_mV * 0.05988)); // Calculate theoretical value of fdbk in mV
   Serial.print("Feedback voltage = ");
   Serial.println(Vfdbk_MC4725_mV);
   fdbk_MC4725 = map(Vfdbk_MC4725_mV, 0, Vin_mV, 0, 4095); // Map the value to 12 bit int (12-bit  resolution: values between 0 - 4095)
@@ -86,12 +86,12 @@ void Solar_charger::setCharging(float Voltage_V) {
   Serial.println(error);
 
   for(int i = 0; i < 10; i++) {
-    while(MOD(error) > 25) {  // If the error is greater than 25 mV try to minimise it using P(ID) controller. Max 10 itterations. 
+    if(MOD(error) > 10) {  // If the error is greater than 25 mV try to minimise it using P(ID) controller. Max 10 itterations. 
       error_correction = error / 2;
       Serial.print("Error correction = ");
       Serial.println(error_correction);
       Vbat_desired_mV_corrected += error; // Add/subtract error correction to Vbat desired
-      Vfdbk_MC4725_mV = (((((float) (R6+R7) / R7) * 1.235 - Vbat_desired_mV_corrected) * R7) / R6);
+      Vfdbk_MC4725_mV = (1309 - (int) ((float) Vbat_desired_mV_corrected * 0.05988)); // Calculate theoretical value of fdbk in mV
       fdbk_MC4725 = map(Vfdbk_MC4725_mV, 0, Vin_mV, 0, 4095); 
       MCP4725_DAC.setVoltage(fdbk_MC4725, false); //12-bit  resolution: values between 0 - 4095;
       delay(500);
@@ -138,9 +138,7 @@ void Solar_charger::LM2576(int state){
 /* Method for debuging the board and reporting its current state*/
 void Solar_charger::report(int serialPort, bool Bulk) {
   SoftwareSerial btModule(BT_TX_PIN, BT_RX_PIN);  // Create SoftwareSerial object and define Software serial port
-
   btModule.begin(9600);       // Software Serial port configuration (baud rate: 9600)
-  Serial.begin(9600);         // Serial port configuration (baud rate: 9600)
 
   unsigned long _BAT_voltage = Solar_charger::get(BAT_VOLTAGE);  // Calculate Battery voltage
   unsigned long _PV_voltage = Solar_charger::get(PV_VOLTAGE);    // Calculate PV panel voltage
@@ -170,7 +168,7 @@ void Solar_charger::report(int serialPort, bool Bulk) {
     Serial.print(((_PV_current * (long) _PV_voltage) / 1000000.0), 3);
     Serial.print(" W \n# Battery SOC (state of charge)\t");
     int bat_SOC = (_BAT_voltage - 11820)/13;
-    Serial.print((bat_SOC > 0 && bat_SOC < 100) ? bat_SOC : "invalid");
+    Serial.print((bat_SOC > 0 && bat_SOC < 100) ? bat_SOC : -1);
     Serial.print(" % of full capacity \n\n");
     n_serial++; //Increment current report number
   }
@@ -196,7 +194,7 @@ void Solar_charger::report(int serialPort, bool Bulk) {
     btModule.print(((_PV_current * (long) _PV_voltage) / 1000000.0), 3);
     btModule.print(" W \n# Battery SOC (state of charge)\t");
     int bat_SOC = (_BAT_voltage - 11820)/13;
-    btModule.print((bat_SOC > 0 && bat_SOC < 100) ? bat_SOC : "invalid");
+    btModule.print((bat_SOC > 0 && bat_SOC < 100) ? bat_SOC : -1);
     btModule.print(" % of full capacity \n\n");
     n_bluetooth++; //Increment current report number
   }

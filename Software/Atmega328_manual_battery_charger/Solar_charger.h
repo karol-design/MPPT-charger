@@ -33,7 +33,7 @@
 #define BLUETOOTH 1 // Send report over bluetooth if 1
 
 /* Fill in values below after callibration for improved precision of measurements and charger performance */
-#define Vin_mV 5090       // Atmega328 supply voltage in mV - increased by 25 mV for more precise calculations (systematic error)
+#define Vin_mV 5095       // Atmega328 supply voltage in mV - increased by 25 mV for more precise calculations (systematic error)
 #define PV_cur_Vofset 355 // Voltage in mV to be subtracted from PV_current sensor readings (systematic error)
 #define R2  4680          // R2 resistance in Ohms
 #define R3  976           // R2 resistance in Ohms
