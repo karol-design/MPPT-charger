@@ -48,7 +48,7 @@ class Solar_charger {
   public:
     Solar_charger();
     int get(int command);
-    void setCharging(unsigned long Voltage_mV);
+    void setCharging(float Voltage_V);
     void ledBlink();
     void buzzer();
     void LM2576(int state);
