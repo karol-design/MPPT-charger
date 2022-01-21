@@ -1,0 +1,8 @@
+📌 Link do artykułu: cutt.ly/imda3n0 |  Pierwszy rok na Uniwersytecie w Manchesterze zakończyłem niestety całkowicie zdalnie. Postanowiłem jednak, że teorię dostarczaną na wykładach będę przekuwać na własne projekty praktyczne. I tak ostatnie 4 miesiące minęły mi na pracach nad prostym systemem fotowoltaicznym (Panel & kontroler & akumulator) opartym na SauleBoard - autorskim kontrolerze ładowania, do którego można podłączyć telefon i z niego bezprzewodowo kontrolować system solarny. ☀️
+
+Kilka dni temu opisałem moją pracę i jej efekt na Design Spark gdzie trwa właśnie konkurs na artykuły dotyczące projektów studenckich. Zachęcam więc do zajrzenia, bo liczy się między innymi ilość wyświetleń ;) 
+
+#fotowoltaika #programowanie #elektronika
+
+Dzięki!
+

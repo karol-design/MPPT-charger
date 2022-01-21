@@ -1,0 +1,72 @@
+<p style="text-align: justify;">Each year renewable energy sources, with photovoltaic panels at the forefront, increase their contribution to the overall electricity production. The view of the solar installation on the roof of our neighbours does not surprise anyone anymore, but the way such a system works is not so widely known. The Solar charger project described below is, firstly, a technical challenge for a student like myself, but secondly, it&rsquo;s an attempt to understand the principles of operation of the technology that is shaping the future of energy generation. How to charge a battery from the solar panel? Why MPPT is important especially for bigger installations? And what actually is the MPPT algorithm? &hellip;</p>
+<h3 style="text-align: justify;"><span style="color: #eb2027;">A little bit of background</span></h3>
+<p style="text-align: justify;">In September last year, I&rsquo;ve started a bachelor degree in electronics at the University of Manchester. I&rsquo;m from Poland, so I was excited about moving out to the UK and studying the subject, which I have always been fascinated with. Unfortunately quickly it turned out that there was no chance for any classes at the campus, so I was forced to move back to Poland and start studying remotely. I decided, however, that regardless of the situation, I will try to make the most of the theoretical content provided by the lecturers and complement this with my own practical projects. And that&rsquo;s what I&rsquo;ve done.</p>
+<h3 style="text-align: justify;"><span style="color: #eb2027;">Project definition &ndash; my approach to handle technical challenges</span></h3>
+<p style="text-align: justify;">After the first semester and an introductory course on semiconductors, I&rsquo;ve decided to try my hand out at solar energy and build my own basic system comprising of everything I need to generate, convert, store and use the energy provided by the Sun. As a project general requirement, I&rsquo;ve also decided that I will try to keep it well organised and follow the simple process that I have developed based on the Agile / Lean management approach (figure 1).</p>
+<p style="text-align: justify;"><img src="https://i.postimg.cc/dtCsp1z3/Hardware-development-process-gif.gif" width="1121" height="325" /></p>
+<p style="text-align: center;"><em>Figure 1 &ndash; Hardware development process</em></p>
+<p style="text-align: justify;">Apart from following a predetermined plan I&rsquo;ve also decided to use a version control system to back up all files regularly and keep track of any changes to the design. For this, I used GitHub with their desktop app. You can find the full repository and design files here.</p>
+<p style="text-align: justify;">I have started with general system requirements and pre-design research. After digging a bit in the online library resources I found a couple of great resources:</p>
+<ul style="text-align: justify;">
+<li>"Photovoltaic Power System: Modeling, Design and Control" by Weidong Xiao (University of Sydney) [this was my main source of information about Photovoltaic technology]</li>
+<li>&ldquo;Solar MPPT Battery Charger for the Rural Electrification System&rdquo; by Microchip (36 p. application note) [I have used it a bit as an example of how such a system can be implemented]</li>
+<li>Other data sheets, application notes and online examples of similar projects (e.g. <a href="https://www.instructables.com/ARDUINO-SOLAR-CHARGE-CONTROLLER-Version-30/">Arduino MPPT Solar Charge Controller</a>)</li>
+</ul>
+<p style="text-align: justify;">At this point, I have also specified general system requirements such as:</p>
+<ul style="text-align: justify;">
+<li>The system will comprise of 10 W monocrystalline solar panel and 7 Ah (12 V) rechargeable sealed lead-acid battery (mainly for proof-of-concept purposes);</li>
+<li>The device should be able to act as a step-down converter with adjustable output voltage in the range of 13.0 &ndash; 15.0 V;</li>
+<li>There should be an option for sending reports on the state of the device wirelessly over Bluetooth;</li>
+<li>The charger needs to be able to track maximum power point (MPPT algorithm);</li>
+</ul>
+<p>While I tried to make an iterative approach to designing and prototyping, I tried at the beginning to set the requirements in such a fashion that I won't have to change them during the project and I managed to do that.</p>
+<h3 style="text-align: justify;"><span style="color: #eb2027;">SauleBoard 1.0 - functionalities and performance of the final device</span></h3>
+<p>...</p>
+<p>...</p>
+<h3 style="text-align: justify;"><span style="color: #eb2027;">Hardware development &ndash; from prototypes to custom made PCBs</span></h3>
+<p style="text-align: justify;">The project of the charger can be divided into two main parts: hardware and software (or rather firmware). The hardware on the other hand comprises two sections: Switching step-down regulator and MCU &amp; Bluetooth section.</p>
+<p style="text-align: justify;"><strong>Adjustable buck (step-down) converter </strong></p>
+<p style="text-align: justify;">It quickly turned out that if I want to charge the battery, especially from the Solar Panel the core of my hardware will be an adjustable buck converter. I have used such off-the-shelf modules in the past, however, I have never tried to build one myself. I started with the aim of building a converter from scratch, based on MOSFETs and fundamental electronic components but after few attempts, I discovered that having only very basic circuit analysis experience it&rsquo;s close to impossible for me to make it working and moreover efficient. Hence, I decided to use an IC manufactured exactly for that purpose.</p>
+<p style="text-align: justify;">I choose LM2576-ADJ with an output voltage of 1.23 to 37 V (&plusmn;4%) and a guaranteed 3.0 A output current working at the frequency of 52 kHz. It requires a couple of additional components such as electrolytic capacitors, resistors, Schottky diode and an inductor however the datasheet guide the user quite well throughout the component selection process.</p>
+<p><img src="https://www.rs-online.com/designspark/rel-assets/dsauto/temp/uploaded/MPPT_charge_controller_-_schematic.png" /></p>
+<p style="text-align: center;"><em>Figure 2 - LM2576 step-down schematics</em></p>
+<p style="text-align: justify;">Apart from the LM2576 chip and supporting components I&rsquo;ve added also a reverse current protection diode to prevent current flowing back from the battery to the solar panel, e.g. during the night. There are also two voltage dividers for measurements, a current sensor header along with a couple of test points and jumpers (may also be used for connecting external switches).</p>
+<p style="text-align: justify;">For the buck converter to be really digitally adjustable I created a feedback loop that is connected to MCU (Microcontroller unit), such that by changing FDBK voltage output voltage can be controlled.</p>
+<p style="text-align: justify;"><strong>Microcontroller unit and Bluetooth module</strong></p>
+<p style="text-align: justify;">While the charger is mainly the buck converter it has to be controlled by some external subsystem. In the case of this project, I decided to use the Atmega328P 8-bit AVR microcontroller, as I had experience with Arduino boards, which are in a lot of cases based on AVR MCUs. It has internal ADC (used for voltage measurements) as well as hardware and software UART serial ports (for debugging and Bluetooth communication).</p>
+<p style="text-align: justify;">One of the ideas of the device was to include in it some sort of wireless communication so that you can check the state of the charger without connecting a cable to the</p>
+<p style="text-align: justify;">For Digital-analog-converter I have used an external MCP4725 DAC board with an I2C interface. I tried to create an internal onboard DAC using a PWM signal from the Atmega microcontroller alongside with operational amplifier and RC filter however its performance was not satisfactory enough to control the feedback loop of the buck converter.</p>
+<p style="text-align: justify;"><strong>PCB design and soldering</strong></p>
+<table style="width: 100%; border-collapse: collapse;" border="0">
+<tbody>
+<tr style="height: 17px;">
+<td style="width: 52%; height: 17px;">
+<p style="text-align: justify;">After about two months of prototyping (Design --&gt; Build --&gt; Test loop iterations) and finding the most suitable components, modules and interconnections between all of them, it came time for finalising design files. I&rsquo;ve made some last changes to the schematic, ask a couple of other hobbyist/engineers for any last pieces of advice online, and start creating a layout for the Printed Circuit Board (PCB).</p>
+<p style="text-align: justify;">As one of the last things, I added also a gold pin header connected to two unused I/O pins of Atmega328 along with +5 V &amp; GND connections. These are marked as Dev Ports as they are intended to be used for future development purposes or external devices (like ESP32 with Wi-Fi capabilities) that may be connected to the board.</p>
+</td>
+<td style="width: 6%;">
+<p style="text-align: justify;">&nbsp;</p>
+</td>
+<td style="width: 42%; height: 100%; vertical-align: middle;">
+<p><img src="https://i.postimg.cc/nVd3zb04/Webp-net-gifmaker.gif" /></p>
+<p style="text-align: center;"><em>Figure 3 - SauleBoard PCB assembly animation</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">After making sure that all systems and hardware requirements should be met by the board and running the final ERC in schematic and DRC in board file I exported Gerber files for manufacturing. I ordered 5 test boards from JLC PCB, as their service was quite cheap and a good fit for the first batch of test boards. Below you can find some photos of the boards, soldering components in and the first try of connecting the charger to the power supply.</p>
+<p style="text-align: justify;"><em><u>PCB related photos</u></em></p>
+<h3 style="text-align: justify;"><span style="color: #eb2027;">Software development &ndash; from first sketches to the board library</span></h3>
+<p style="text-align: justify;">I didn&rsquo;t have much experience with &ldquo;pure&rdquo; C/C++ embedded software but I have been using the Arduino library for a long time, so I decided to stick to that option in this project as well (at least for the prototyping and first boards). I started with separate sketches for each functionality, and I tried to test them one by one before merging them into bigger files. Finally, I decided to try my hand at Object-Oriented Programming (OOP) and create a C++ library based on the Arduino library that would make the code more reliable, easy to read and edit.</p>
+<p style="text-align: justify;">There are several methods in the board class however, the two most interesting ones are get() and setVoltage(). The first one may be used to measure input and output voltage as well as the current (using&nbsp;Grove ACS70331 based module), while the following one is used to set some exact voltage at the output.</p>
+<p style="text-align: justify;"><strong>Taking voltage and current measurements</strong></p>
+<p style="text-align: justify;">Measuring voltages, which includes also measuring current sensor output voltage is done by Atmega328 internal 10-bit ADC. The method (function in the class) takes as a parameter an int number indicating a command, however, by using defined in the library macros we can e.g. write board.get(PV_VOLTAGE).</p>
+<p style="text-align: justify;">After being called it evaluates what is to be measured and what are the adequate voltage divider resistor values (values of which have been entered during the calibration process). Then it takes 100 measurements one after another with 5 ms breaks. It then calculates and returns the average of those readings.</p>
+<p style="text-align: justify;"><strong>Setting output voltage (Proportional controller)</strong></p>
+<p style="text-align: justify;">The method that sets the output voltage is just a bit more complex as it uses the approach of a proportional controller. After we call it by e.g. writing board.setCharging(12.54) it will try to do its best to really set the output voltage to 12.54 V.</p>
+<p style="text-align: justify;">It starts with calculating the theoretical voltage that should be set on the feedback pin, and hence an adequate 12-bit value that should be passed to the DAC module. It sends it and then waits 200 ms for the output voltage to stabilise. After this time it takes a measurement (using get method) of the true output voltage and calculates the error.</p>
+<p style="text-align: justify;">If the error is bigger than &plusmn;&nbsp;15 mV the board will try (for a maximum of 5 times) to decrease the error value. It firstly divides it by two, and then add/subtract it to the originally expected value. After first calibration and tests, it seems to work pretty well, as the algorithm was able to size down the error so far in all attempts, always with less than 5 iterations.&nbsp;</p>
+<p style="text-align: justify;"><strong>MPPT algorithm</strong></p>
+<p style="text-align: justify;">MPPT algorithm is one of the cores of the SauleBoard...</p>
+<h3 style="text-align: justify;"><span style="color: #eb2027;">Conclusion, future development plans and interesting facts</span></h3>
+<p>The name of the project and the board comes from a Saule, who is a solar goddess in the mythologies of Baltic countries.</p>
