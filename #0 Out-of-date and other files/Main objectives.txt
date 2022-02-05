@@ -1,9 +1,0 @@
-1) Learn DC and transient circuit analysis, principle of operation of the basic electronic components - designing the PV MPPT charge controller
-
-2) Practice preparing schematics and designing PCBs - design the PCB for charge controller
-
-3) Practice working with AVR microcontrollers - use of Atmega328 in the project and incorporating it into the board
-
-4) Learn and practice embedded software development in C - software for the board written in C
-
-5) Get acquinted with PV off-grid system topic
